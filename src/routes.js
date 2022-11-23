@@ -13,6 +13,34 @@ const routes = createBrowserRouter([
          { path: 'register', element: <>register</> },
          { path: '/category/:id', element: <>category</>},
          { 
+            path: 'buyer',
+            element: <>Buyers</>,
+            children: [
+               {
+                  path: 'orders', 
+                  element: <>My Orders</>
+               },
+               {
+                  path: 'reporte', 
+                  element: <>My Reports</>
+               }
+            ]
+         },
+         { 
+            path: 'seller',
+            element: <>Seller</>,
+            children: [
+               {
+                  path: 'products', 
+                  element: <>Products</>
+               },
+               {
+                  path: 'addProduct', 
+                  element: <>Add Product</>
+               }
+            ]
+         },
+         { 
             path: 'admin',
             element: <>admin</>,
             children: [

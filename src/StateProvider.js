@@ -17,17 +17,17 @@ const StateProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const providerSignin = (provider) => {
+    const providerLogin = (provider) => {
         setLoading(true);
         return signInWithPopup(auth, provider);
     }
 
-    const signUp = (email, password) => {
+    const register = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    const signIn = (email, password) => {
+    const login = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
@@ -36,7 +36,7 @@ const StateProvider = ({ children }) => {
         return updateProfile(auth.currentUser, profile);
     }
 
-    const signOutUser = () => {
+    const logOut = () => {
         setLoading(true);
         return signOut(auth);
     }
@@ -55,10 +55,10 @@ const StateProvider = ({ children }) => {
         setUser,
         loading, 
         setLoading,
-        signUp, 
-        signIn,
-        signOutUser, 
-        providerSignin, 
+        register, 
+        login,
+        logOut, 
+        providerLogin, 
         updateUserProfile,
     };
 
