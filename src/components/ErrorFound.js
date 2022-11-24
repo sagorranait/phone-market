@@ -1,22 +1,23 @@
-import '../styles/NotFound.css'
 import { Container } from 'react-bootstrap';
 import { Link, useRouteError } from 'react-router-dom';
+import errorFound from "../assets/errorFound.png";
+import '../styles/ErrorFound.css'
 
-const NotFound = () => {
+const ErrorFound = () => {
   const error = useRouteError();
 
   return (
-    <div id="notfound-page">
+    <div id="errorFound-page">
         <Container>
-            <div class="notfound-content">
-                <img src='../images/not-found.png' alt='Not-Found' />
+            <div class="errorFound-content">
+                <img src={errorFound} alt='Error-Found' />
                 <p>Oops!, An Unexpected Error Occurred.</p>
                 <p>Error Message : <i>{error.statusText || error.message}</i></p>
-                <Link to={'/'}>Back to Home Page</Link>
+                <Link to={'/'} className="phoneMarket-btn">Go Back</Link>
             </div>
         </Container>
     </div>
   )
 }
 
-export default NotFound
+export default ErrorFound

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import App from "./App";
+import ErrorFound from "./components/ErrorFound";
 
 const routes = createBrowserRouter([
    { 
@@ -38,7 +39,7 @@ const routes = createBrowserRouter([
             ]
          }
       ],
-      errorElement: <>error</>
+      errorElement: <ErrorFound/>
    },
  ]);
 
