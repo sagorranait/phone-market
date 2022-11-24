@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import App from "./App";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 import ErrorFound from "./components/ErrorFound";
 
 const routes = createBrowserRouter([
@@ -10,8 +12,8 @@ const routes = createBrowserRouter([
       children: [
          { index: true, element: <>home</> },
          { path: 'blogs', element: <>blogs</> },
-         { path: 'login', element: <>login</> },
-         { path: 'register', element: <>register</> },
+         { path: 'login', element: <SignIn/> },
+         { path: 'register', element: <SignUp/> },
          { path: '/category/:id', element: <>category</>},
          { 
             path: 'buyer',

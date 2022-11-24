@@ -1,0 +1,95 @@
+#signInArea{
+   background: rgb(49 61 77);
+   padding: 50px 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+#signInArea .signin-inputs{
+   width: 450px;
+   margin: 0 auto;
+   text-align: center;
+}
+
+#signInArea .signin-inputs h2{
+   font-weight: 700;
+   font-size: 28px;
+   line-height: 150%;
+   color: #ffffff;
+   padding-bottom: 10px;
+   margin: 0;
+}
+
+#signInArea .signin-inputs p{
+   font-size: 14px;
+   line-height: 175.78%;
+   color: #ffffff;
+   margin-bottom: 0px;
+}
+
+#signInArea .user-form p {
+   font-weight: 400;
+   font-size: 14px;
+   padding: 25px 0px 0px;
+   text-align: center;
+}
+
+#signInArea .user-form button {
+   margin-top: 15px;
+   width: 100%;
+   padding: 17px 0px;
+   font-size: 16px;
+   line-height: 17px;
+}
+
+#signInArea .user-platform{
+   padding: 20px 0px;
+}
+
+#signInArea .user-platform svg {
+   font-size: 25px;
+   margin-right: 8px;
+}
+
+#signInArea .user-platform h4 {
+   font-size: 14px;
+   line-height: 150%;
+   color: #ffffff;
+   margin: 20px 0 0 0;
+}
+
+/* Input Field Design */
+#emailInput, 
+#passwordInput, 
+#nameInput, 
+#urlInput, 
+#selectInput, 
+#numberInput, 
+#textareaInput {
+   background: #FFFFFF;
+   border: 1px solid #EFEFEF;
+   width: 100%;
+   padding: 17px 15px;
+   margin-top: 15px;
+   font-size: 16px;
+   line-height: 17px;
+   color: #5C5C5C;
+}
+
+#emailInput:focus, 
+#passwordInput:focus,
+#nameInput:focus,
+#urlInput:focus,
+#selectInput:focus,
+#numberInput:focus,
+#textareaInput:focus {
+  outline: 0;
+  box-shadow: none;
+}
+/* Responsive Media Query */
+@media only screen and (max-width: 575.98px) {
+   #signInArea .signin-inputs {
+      width: 100%;
+  }
+}
