@@ -4,6 +4,7 @@ import App from "./App";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ErrorFound from "./components/ErrorFound";
+import DashBoard from "./components/DashBoard";
 
 const routes = createBrowserRouter([
    { 
@@ -16,28 +17,20 @@ const routes = createBrowserRouter([
          { path: 'register', element: <Register/> },
          { path: '/category/:id', element: <>category</>},
          { 
-            path: 'buyer',
-            element: <>Buyers</>,
+            path: 'dashboard',
+            element: <DashBoard/>,
             children: [
-               { path: 'orders', element: <>My Orders</> },
-               { path: 'reporte',  element: <>My Reports</>}
-            ]
-         },
-         { 
-            path: 'seller',
-            element: <>Seller</>,
-            children: [
-               { path: 'products',  element: <>Products</> },
-               { path: 'addProduct',  element: <>Add Product</> }
-            ]
-         },
-         { 
-            path: 'admin',
-            element: <>admin</>,
-            children: [
-               { path: 'allSellers',  element: <>Sellers</> },
-               { path: 'allBuyers',  element: <>Buyers</> },
-               { path: 'reported',  element: <>Reported</> }
+               { path: 'profile',  element: <>profile</> },
+               // admin routes
+               { path: 'admin/allSellers',  element: <>Sellers</> },
+               { path: 'admin/allBuyers',  element: <>Buyers</> },
+               { path: 'admin/allReportes',  element: <>allReportes</> },
+               // seller routes
+               { path: 'seller/products',  element: <>Products</> },
+               { path: 'seller/addProduct',  element: <>Add Product</> },
+               // buyer routes
+               { path: 'buyer/orders', element: <>My Orders</> },
+               { path: 'buyer/reporte',  element: <>My Reports</>}
             ]
          }
       ],

@@ -9,7 +9,7 @@ const ErrorFound = () => {
   return (
     <div id="errorFound-page">
         <Container>
-            <div class="errorFound-content">
+            <div className="errorFound-content">
                 <img src={errorFound} alt='Error-Found' />
                 <p>Oops!, An Unexpected Error Occurred.</p>
                 <p>Error Message : <i>{error.statusText || error.message}</i></p>

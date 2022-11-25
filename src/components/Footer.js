@@ -13,7 +13,7 @@ function Footer() {
       <section className='footer-section'>
          <Container>
             <Row>
-            <Col sm={12} md={6} lg={3} xl={3} xxl={3}>
+               <Col sm={12} md={6} lg={3} xl={3} xxl={3}>
                   <div className="quick-access social">
                      <h2>Pay With</h2>
                      <div className="payment-icon">

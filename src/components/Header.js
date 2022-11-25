@@ -2,14 +2,28 @@ import { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { StateContext } from '../StateProvider';
 import { FaBars } from "react-icons/fa";
+import toast from 'react-hot-toast';
 import Logo from "../assets/logo.png"
 import '../styles/Header.css';
 
 function Header() {
-  const {user} = useContext(StateContext);
+  const { user, logOut } = useContext(StateContext);
+  let location = useLocation();
+  const navigate = useNavigate();
+
+  const userLogOut = () => {
+      logOut()
+      .then(()=>{
+         navigate('/');
+      })
+      .catch(error => {
+         const errorMessage = error.message;
+         toast.error(errorMessage?.split('/')[1]?.replace(').', '').split('-').join(' '));
+      });
+  }
 
   return (
    <Navbar expand="lg" bg="dark">
@@ -37,15 +51,26 @@ function Header() {
             >
                Blog
             </NavLink>
+            <NavLink 
+               to='/dashboard/profile' 
+               className={`nav-link ${({ isActive }) => isActive ? "active" : ""} 
+               ${
+                  (location.pathname === '/dashboard/seller/products') || 
+                  (location.pathname === '/dashboard/seller/addProduct') || 
+                  (location.pathname === '/dashboard/buyer/orders') || 
+                  (location.pathname === '/dashboard/buyer/reporte') ||
+                  (location.pathname === '/dashboard/admin/allSellers') ||
+                  (location.pathname === '/dashboard/admin/allBuyers') || 
+                  (location.pathname === '/dashboard/admin/allReportes')
+                  ? 'active': ''}` }
+            >
+               Dashboard
+            </NavLink>
           </Nav>
         <div className='nav-user navbar-nav'>
             {
                user?.email || user?.displayName ? 
-                  <Link className='nav-link profile' to='/profile'>
-                     <div className='user-pic'>
-                        <img src={user?.photoURL} alt="user" />
-                     </div>
-                  </Link>
+               <Link className='nav-link phoneMarket-btn' to='/login' onClick={userLogOut}>Sign Out</Link>
                : <Link className='nav-link phoneMarket-btn' to='/login'>Login</Link>
             }
         </div>
