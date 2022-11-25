@@ -4,7 +4,8 @@ import App from "./App";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ErrorFound from "./components/ErrorFound";
-import DashBoard from "./components/DashBoard";
+import DashBoard from "./pages/DashBoard";
+import Profile from "./pages/Profile";
 
 const routes = createBrowserRouter([
    { 
@@ -20,7 +21,7 @@ const routes = createBrowserRouter([
             path: 'dashboard',
             element: <DashBoard/>,
             children: [
-               { path: 'profile',  element: <>profile</> },
+               { path: 'profile',  element: <Profile/> },
                // admin routes
                { path: 'admin/allSellers',  element: <>Sellers</> },
                { path: 'admin/allBuyers',  element: <>Buyers</> },

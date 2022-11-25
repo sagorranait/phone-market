@@ -13,7 +13,8 @@ import { BsPeople, BsFillPeopleFill } from "react-icons/bs";
 import '../styles/DashBoard.css';
 
 const DashBoard = () => {
-  const {user} = useContext(StateContext);
+  const { user } = useContext(StateContext);
+  console.log(user);
 
   return (
     <section id='dashboard'>
@@ -41,7 +42,7 @@ const DashBoard = () => {
                      >
                         <BiCalendarPlus /> Add New Product
                      </NavLink>
-                     {/* <NavLink 
+                     <NavLink 
                         to='/dashboard/buyer/orders' 
                         className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
                      >
@@ -70,7 +71,7 @@ const DashBoard = () => {
                         className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
                      >
                         <BiAngry /> All Reportes
-                     </NavLink> */}
+                     </NavLink>
                      </div>
                   </div>
                </Col>

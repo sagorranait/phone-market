@@ -53,7 +53,7 @@ const Login = () => {
   return (
     <Form 
       title="Hey, Welcome Back !!!" 
-      description="Use the email and password you chose when registering to log into your account."
+      description="Use the email and password you chose when registering to your account."
       toastMessage="Sign-In Successfully."
     >
       <form className='user-form' onSubmit={loginHandler}>

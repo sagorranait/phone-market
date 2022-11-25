@@ -1,0 +1,50 @@
+.student-profile {
+   text-align: center;
+   width: 550px;
+   margin: 200px auto;
+}
+
+.student-profile p{
+   margin: 0;
+}
+
+.student-profile .user-profile{
+   padding-top: 5px;
+}
+
+#profileNameInput,
+#profileUrlInput {
+   background: #FFFFFF;
+   border: 1px solid #EFEFEF;
+   width: 100%;
+   padding: 17px 15px;
+   margin-top: 15px;
+   font-size: 16px;
+   line-height: 17px;
+   color: #5C5C5C;
+   border-radius: 100px;
+}
+
+.student-profile .profile-input button{
+   margin-top: 20px;
+}
+
+/* Responsive Media Query */
+@media only screen and (max-width: 575.98px) {
+   .student-profile {
+      height: 510px;
+  }
+
+  .student-profile .user-profile {
+      padding-top: 5px;
+   }
+}
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+   .student-profile {
+      height: 510px;
+  }
+
+  .student-profile .user-profile {
+      padding-top: 5px;
+   }
+}
