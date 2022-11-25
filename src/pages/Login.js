@@ -4,7 +4,7 @@ import { StateContext } from '../StateProvider';
 import Form from '../components/Form';
 import toast from 'react-hot-toast';
 
-const SignIn = () => {
+const Login = () => {
   const { login, setLoading } = useContext(StateContext);
   const [logging, setLogging] = useState(false);
   let navigate = useNavigate();
@@ -66,4 +66,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn
+export default Login

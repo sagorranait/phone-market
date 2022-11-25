@@ -4,8 +4,8 @@ import { StateContext } from '../StateProvider';
 import toast from 'react-hot-toast';
 import Form from '../components/Form';
 
-const SignUp = () => {
-  const {signUp, updateUserProfile, signOutUser} = useContext(StateContext);
+const Register = () => {
+  const {register, updateUserProfile, logOut} = useContext(StateContext);
   let navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
 
@@ -27,13 +27,13 @@ const SignUp = () => {
       toast.error("Password is too short!");
     }
 
-    signUp(email, password)
+    register(email, password)
     .then(() => {
-      signOutUser()
+      logOut()
         .then(()=>{
           toast.success('Successfully account created.');
           setSubmitting(false);
-          navigate('/signin');
+          navigate('/login');
         });
       updateUserProfile({displayName: name, photoURL: photoUrl})
       .then(()=>{
@@ -63,10 +63,12 @@ const SignUp = () => {
         <input type="url" name="photoUrl" id="urlInput" placeholder='Photo URL' required />
         <input type="email" name="email" id="emailInput" placeholder='Email' required />
         <input type="password" name="password" id="passwordInput" placeholder='Password' required />
-        <select name="type" id="selectInput">
-          <option value="buyer">Customer</option>
-          <option value="seller">Become a Seller</option>
-        </select>
+        <div className='select-input'>
+          <select name="type" id="selectInput">
+            <option value="buyer">Customer</option>
+            <option value="seller">Become a Seller</option>
+          </select>
+        </div>
         <button type="submit" className='phoneMarket-btn'>{submitting ? 'Registering...' : 'Register'}</button>
         <p>Already have an account? <Link to='/login'>Login</Link></p>
       </form>
@@ -74,4 +76,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default Register

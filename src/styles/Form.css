@@ -64,7 +64,6 @@
 #passwordInput, 
 #nameInput, 
 #urlInput, 
-#selectInput, 
 #numberInput, 
 #textareaInput {
    background: #FFFFFF;
@@ -75,6 +74,7 @@
    font-size: 16px;
    line-height: 17px;
    color: #5C5C5C;
+   border-radius: 100px;
 }
 
 #emailInput:focus, 
@@ -87,6 +87,28 @@
   outline: 0;
   box-shadow: none;
 }
+
+.select-input {
+   width: 100%;
+   background: #fff;
+   margin-top: 15px;
+   border-radius: 100px;
+}
+
+#selectInput {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   background: transparent;
+   background-image: url("data:image/svg+xml;utf8,<svg fill=%27black%27 height=%2724%27 viewBox=%270 0 24 24%27 width=%2724%27 xmlns=%27http://www.w3.org/2000/svg%27><path d=%27M7 10l5 5 5-5z%27/><path d=%27M0 0h24v24H0z%27 fill=%27none%27/></svg>");
+   background-repeat: no-repeat;
+   background-position-x: 97%;
+   background-position-y: 15px;
+   border: 1px solid #EFEFEF;
+   width: 100%;
+   padding: 15px 15px;
+   border-radius: 100px;
+}
+
 /* Responsive Media Query */
 @media only screen and (max-width: 575.98px) {
    #signInArea .signin-inputs {

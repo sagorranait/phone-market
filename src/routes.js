@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import App from "./App";
-import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import ErrorFound from "./components/ErrorFound";
 
 const routes = createBrowserRouter([
@@ -12,8 +12,8 @@ const routes = createBrowserRouter([
       children: [
          { index: true, element: <>home</> },
          { path: 'blogs', element: <>blogs</> },
-         { path: 'login', element: <SignIn/> },
-         { path: 'register', element: <SignUp/> },
+         { path: 'login', element: <Login/> },
+         { path: 'register', element: <Register/> },
          { path: '/category/:id', element: <>category</>},
          { 
             path: 'buyer',
