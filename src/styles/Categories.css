@@ -1,0 +1,35 @@
+.categories-area{
+   background: #FFF;
+   padding: 50px 0 0;
+}
+
+.categories-area h2{
+   font-weight: 700;
+   font-size: 36px;
+   line-height: 130%;
+   color: #1E212C;
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+.categories-area .category {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 15px;
+   flex-direction: column;
+}
+
+.categories-area .category .image {
+   width: 200px;
+   height: 200px;
+   padding: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 15px;
+}
+
+.categories-area .category .image img{
+   width: 100%;
+}

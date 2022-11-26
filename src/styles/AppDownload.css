@@ -1,10 +1,10 @@
 .appDownload-area {
    background: rgb(49 61 77);
-   padding: 50px 0;
 }
 
-.appDownload-area img{
+.appDownload-area img {
    width: 100%;
+   margin-top: -25px;
 }
 
 .appDownload-area .content{

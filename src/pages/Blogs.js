@@ -37,7 +37,6 @@ const Blogs = () => {
          </Container>
       </section>
       <Services/>
-      <AppDownload/>
     </>
   )
 }
