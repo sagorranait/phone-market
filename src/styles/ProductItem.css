@@ -1,0 +1,86 @@
+.product-item {
+   border: 1px solid #607ba1;
+   padding: 15px 15px 5px;
+   position: relative;
+}
+
+.product-item .tag {
+   display: block;
+   position: absolute;
+   left: 10px;
+   top: -13px;
+   color: #fff;
+   text-align: center;
+   line-height: 20px;
+   background: #1cadd9 none repeat scroll 0 0;
+   padding: 3px 8px;
+   text-transform: capitalize;
+}
+
+.product-item .img {
+   width: 100%;
+   height: 285px;
+}
+
+.product-item .img img {
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+   object-position: center;
+}
+
+.product-item h2 {
+   color: #000000;
+   font-size: 17px;
+   font-weight: 600;
+   text-align: left;
+   margin: 15px 0 10px;
+}
+
+.product-item h4{
+   color: #333333;
+   font-size: 15px;
+   margin: 0 0 10px;
+}
+
+.product-item h4 del {
+   color: #afafaf;
+}
+
+.product-item h4 span {
+   color: #607ba1;
+   font-weight: 700;
+}
+
+.product-item .type {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding-bottom: 10px;
+}
+
+.product-item .type p {
+   margin: 0;
+}
+
+.product-item .type p span {
+   text-transform: capitalize;
+}
+
+.product-item .type p span img {
+   width: 17px;
+}
+
+.product-item .actions{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 5px 0 0;
+}
+
+.product-item .actions button {
+   font-weight: 600;
+   padding: 6px 13px;
+   font-size: 15px;
+   border-radius: 0px;
+}

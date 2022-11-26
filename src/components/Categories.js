@@ -6,7 +6,7 @@ function Categories() {
   return (
     <section className='categories-area'>
       <Container>
-         <h2>Popular Categories</h2>
+         <h2>Categories</h2>
          <Row>
             <Col sm={12} md={6} lg={3} xl={3} xxl={3}>
                <div className='category'>

@@ -1,7 +1,6 @@
 import { Accordion, Container } from 'react-bootstrap';
 import AccordionItme from '../components/AccordionItme';
 import Services from '../components/Services';
-import AppDownload from '../components/AppDownload';
 import '../styles/Blogs.css';
 
 const Blogs = () => {
