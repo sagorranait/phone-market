@@ -7,13 +7,14 @@ import ErrorFound from "./components/ErrorFound";
 import DashBoard from "./pages/DashBoard";
 import Profile from "./pages/Profile";
 import Blogs from "./pages/Blogs";
+import Home from "./pages/Home";
 
 const routes = createBrowserRouter([
    { 
       path: '/', 
       element: <App/>,
       children: [
-         { index: true, element: <>home</> },
+         { index: true, element: <Home/> },
          { path: 'blogs', element: <Blogs/> },
          { path: 'login', element: <Login/> },
          { path: 'register', element: <Register/> },

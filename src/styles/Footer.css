@@ -103,6 +103,18 @@
    color: #FFC000;
 }
 
+.quick-access.social p {
+   color: #fff;
+   margin-top: 18px;
+   margin-bottom: 0;
+   font-size: 14px;
+}
+
+.quick-access.social .stores-img img {
+   width: 115px;
+   padding-top: 5px;
+}
+
 /* Responsive Media Query */
 @media only screen and (max-width: 575.98px) {
    .footer-section {

@@ -1,10 +1,12 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaInstagram, FaBehance } from "react-icons/fa";
-import maestro from "../assets/payment-icon/maestro.png"
-import MasterCard from "../assets/payment-icon/master-card.png"
-import paypal from "../assets/payment-icon/paypal.png"
-import visa from "../assets/payment-icon/visa.png"
+import maestro from "../assets/payment-icon/maestro.png";
+import MasterCard from "../assets/payment-icon/master-card.png";
+import paypal from "../assets/payment-icon/paypal.png";
+import visa from "../assets/payment-icon/visa.png";
+import GooglePlay from '../assets/googleplay.png';
+import AppStore from '../assets/appstore.png';
 import '../styles/Footer.css';
 
 function Footer() {
@@ -54,6 +56,11 @@ function Footer() {
                         <a href="https://twitter.com" target="_blank" rel="noreferrer"><FaTwitter/></a>
                         <a href="https://instagram.com" target="_blank" rel="noreferrer"><FaInstagram/></a>
                         <a href="https://www.behance.net" target="_blank" rel="noreferrer"><FaBehance/></a>
+                     </div>
+                     <p>Download From</p>
+                     <div className="stores-img">
+                        <img src={AppStore} alt="app-store" />
+                        <img src={GooglePlay} alt="google-play" />
                      </div>
                   </div>
                </Col>
