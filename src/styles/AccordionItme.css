@@ -1,0 +1,47 @@
+.accordion-item {
+   border: 0px solid transparent !important;
+   margin-bottom: 15px;
+   border-radius: 0px;
+}
+
+.accordion-button:after {
+   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+ }
+
+button.accordion-button {
+   background-color: #607ba1;
+   color: #fff;
+   font-weight: 600;
+}
+
+button.accordion-button:not(.collapsed) {
+   background-color: #607ba1;
+   color: #fff;
+   font-weight: 600;
+   box-shadow: none;
+}
+
+button.accordion-button:focus {
+   outline: 0;
+   box-shadow: none;
+   background-color: #607ba1;
+   color: #fff;
+   font-weight: 600;
+}
+
+.accordion-body {
+   font-size: 15px;
+   line-height: 25px;
+   color: #fff;
+   background-color: #607ba1;
+}
+
+.accordion-item:first-of-type .accordion-button {
+   border-top-left-radius: 0 !important;
+   border-top-right-radius: 0 !important;
+}
+
+.accordion-item:last-of-type .accordion-button.collapsed {
+   border-bottom-right-radius: 0 !important;
+   border-bottom-left-radius: 0 !important;
+}
