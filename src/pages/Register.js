@@ -59,12 +59,25 @@ const Register = () => {
       toastMessage="Sign-Up Successfully."
     >
       <form className='user-form' onSubmit={signUpHandler}>
-        <input type="text" name="name" id="nameInput" placeholder='Name' />
+        <input type="text" name="name" id="nameInput" placeholder='Name' required />
         <input type="url" name="photoUrl" id="urlInput" placeholder='Photo URL' required />
         <input type="email" name="email" id="emailInput" placeholder='Email' required />
         <input type="password" name="password" id="passwordInput" placeholder='Password' required />
+        <input type="number" name="number" id="numberInput" placeholder='Phone Number' required />
         <div className='select-input'>
-          <select name="type" id="selectInput">
+          <select name="divisions" id="selectInput">
+            <option value="dhaka">Dhaka</option>
+            <option value="chittagong">Chittagong</option>
+            <option value="khulna">Khulna</option>
+            <option value="mymensingh">Mymensingh</option>
+            <option value="rajshahi">Rajshahi</option>
+            <option value="rangpur">Rangpur</option>
+            <option value="sylhet">Sylhet</option>
+            <option value="barisal">Barisal</option>
+          </select>
+        </div>
+        <div className='select-input'>
+          <select name="status" id="selectInput">
             <option value="buyer">Customer</option>
             <option value="seller">Become a Seller</option>
           </select>

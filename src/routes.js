@@ -10,6 +10,7 @@ import Blogs from "./pages/Blogs";
 import Home from "./pages/Home";
 import Category from "./pages/Category";
 import Categoried from "./components/Category";
+import SellerProducts from "./components/dashboard/SellerProducts";
 
 const routes = createBrowserRouter([
    { 
@@ -38,7 +39,7 @@ const routes = createBrowserRouter([
                { path: 'admin/allBuyers',  element: <>Buyers</> },
                { path: 'admin/allReportes',  element: <>allReportes</> },
                // seller routes
-               { path: 'seller/products',  element: <>Products</> },
+               { path: 'seller/products',  element: <SellerProducts/> },
                { path: 'seller/addProduct',  element: <>Add Product</> },
                // buyer routes
                { path: 'buyer/orders', element: <>My Orders</> },
