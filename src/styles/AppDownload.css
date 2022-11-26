@@ -1,0 +1,28 @@
+.appDownload-area {
+   background: rgb(49 61 77);
+   padding: 50px 0;
+}
+
+.appDownload-area img{
+   width: 100%;
+}
+
+.appDownload-area .content{
+   padding: 48px;
+}
+
+.appDownload-area .content h2{
+   font-weight: 600;
+   font-size: 32px;
+   line-height: 130%;
+   color: #FFFFFF;
+   padding-bottom: 30px;
+}
+
+.appDownload-area .content img {
+   width: 160px;
+   cursor: pointer;
+   margin-right: 24px;
+   border: 2px solid #607ba1;
+   border-radius: 8px;
+}
