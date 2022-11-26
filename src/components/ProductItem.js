@@ -10,15 +10,14 @@ function ProductItem() {
       </div>
       <h2>SAMSUNG Galaxy S22 Ultra</h2>
       <h4>Price: <del>1199.99</del> <span>349.38</span></h4>
+      <p>128GB, 8K Camera & Video, Brightest Display Screen, S Pen, Long Battery Life, Fast 4nm Processor, US Version, Phantom Black</p>
       <div className="type">
          <p>Condition: <span>good</span></p>
          <p>Used: <span>1 year</span></p>
-      </div>
-      <div className="type">
          <p>Rakib Hasan <span><img src={Verified} alt="Verified" /></span></p>
-         <p>Call: 01812345698</p>
       </div>
       <div className="type">
+         <p>Call: 01812345698</p>
          <p>Area: <span>Dhaka</span></p>
          <p>Date: <span>2022-11-26</span></p>
       </div>

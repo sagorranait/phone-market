@@ -9,12 +9,15 @@ function Advertised() {
       <Container>
          <h2>Advertisement</h2>
          <Row>
-            <Col sm={12} md={6} lg={3} xl={3} xxl={3}>
+            <Col sm={12} md={6} lg={4} xl={4} xxl={4}>
                <ProductItem/>
             </Col>
-            <Col sm={12} md={6} lg={3} xl={3} xxl={3}>asdfaf</Col>
-            <Col sm={12} md={6} lg={3} xl={3} xxl={3}>adfasdf</Col>
-            <Col sm={12} md={6} lg={3} xl={3} xxl={3}>asdfasdf</Col>
+            <Col sm={12} md={6} lg={4} xl={4} xxl={4}>
+               <ProductItem/>
+            </Col>
+            <Col sm={12} md={6} lg={4} xl={4} xxl={4}>
+               <ProductItem/>
+            </Col>
          </Row>
       </Container>
     </section>

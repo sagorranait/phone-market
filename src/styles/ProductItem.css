@@ -2,6 +2,7 @@
    border: 1px solid #607ba1;
    padding: 15px 15px 5px;
    position: relative;
+   margin-bottom: 35px;
 }
 
 .product-item .tag {
@@ -37,10 +38,15 @@
    margin: 15px 0 10px;
 }
 
+.product-item p {
+   font-size: 14px;
+}
+
 .product-item h4{
    color: #333333;
-   font-size: 15px;
+   font-size: 17px;
    margin: 0 0 10px;
+   font-weight: 400;
 }
 
 .product-item h4 del {

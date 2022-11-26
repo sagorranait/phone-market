@@ -8,6 +8,8 @@ import DashBoard from "./pages/DashBoard";
 import Profile from "./pages/Profile";
 import Blogs from "./pages/Blogs";
 import Home from "./pages/Home";
+import Category from "./pages/Category";
+import Categoried from "./components/Category";
 
 const routes = createBrowserRouter([
    { 
@@ -18,7 +20,14 @@ const routes = createBrowserRouter([
          { path: 'blogs', element: <Blogs/> },
          { path: 'login', element: <Login/> },
          { path: 'register', element: <Register/> },
-         { path: '/category/:id', element: <>category</>},
+         { 
+            path: 'category', 
+            element: <Category/>,
+            children: [ 
+               { path: 'all', element: <Categoried/> },
+               { path: ':id', element: <Categoried/> } 
+            ]
+         },
          { 
             path: 'dashboard',
             element: <DashBoard/>,
