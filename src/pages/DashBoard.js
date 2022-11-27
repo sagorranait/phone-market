@@ -13,8 +13,7 @@ import '../styles/DashBoard.css';
 
 const DashBoard = () => {
   const { user } = useContext(StateContext);
-  console.log(user);
-
+   console.log(user);
   return (
     <section id='dashboard'>
          <Container>

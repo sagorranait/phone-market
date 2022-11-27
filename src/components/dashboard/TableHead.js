@@ -5,7 +5,7 @@ function TableHead({table}) {
    <Table striped>
       <thead>
       <tr>
-         {table.map(th => <th className={`text-white ${th !== 'No.' && 'text-center' }`}>{th}</th>)}
+         {table.map(th => <th key={th} className={`text-white ${th !== 'No.' && 'text-center' }`}>{th}</th>)}
       </tr>
       </thead>
    </Table>

@@ -10,14 +10,14 @@ import Logo from "../assets/logo.png"
 import '../styles/Header.css';
 
 function Header() {
-  const { user, logOut } = useContext(StateContext);
-  console.log(user);
+  const { user, setUser, logOut } = useContext(StateContext);
   let location = useLocation();
   const navigate = useNavigate();
 
   const userLogOut = () => {
       logOut()
       .then(()=>{
+         setUser([]);
          navigate('/');
       })
       .catch(error => {
@@ -71,7 +71,7 @@ function Header() {
         <div className='nav-user navbar-nav'>
             {
                user?.email || user?.displayName ? 
-               <Link className='nav-link phoneMarket-btn' to='/login' onClick={userLogOut}>Sign Out</Link>
+               <Link className='nav-link phoneMarket-btn' to='/' onClick={userLogOut}>Sign Out</Link>
                : <Link className='nav-link phoneMarket-btn' to='/login'>Login</Link>
             }
         </div>

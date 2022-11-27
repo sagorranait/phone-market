@@ -6,19 +6,51 @@ import { StateContext } from '../StateProvider';
 import { FaGoogle } from "react-icons/fa";
 import toast from 'react-hot-toast';
 import '../styles/Form.css'
+import axios from 'axios';
 
 const Form = ({title, description, toastMessage, children}) => {
-   const {setUser, providerLogin} = useContext(StateContext);
+  const {setUser, providerLogin} = useContext(StateContext);
   let navigate = useNavigate();
 
    const singupWithGoogleHandler = () => {
       providerLogin(GoogleProvider)
       .then((result) => {
         // The signed-in user info.
-        const user = result.user;
-        setUser(user);
-        toast.success(toastMessage);
-        navigate('/');
+        const newUser = result.user;
+        const providerUser = {
+          displayName: newUser.displayName,
+          photoUrl: newUser.photoURL,   
+          email: newUser.email,
+          number: '01812354689',
+          location: 'Dhaka',
+          status: 'buyer'
+        };
+
+        axios.post('http://localhost:5000/addUser', providerUser)
+        .then((response) => {
+          setUser(providerUser);
+          toast.success(toastMessage);
+          navigate('/');
+        })
+        .catch((error) => {
+          console.log(error);
+          toast.error(error);
+        });
+
+         // Set the JWT
+        fetch('http://localhost:5000/jwt', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+              email: newUser.email
+          })
+        })
+        .then(res => res.json())
+        .then(data => {
+            localStorage.setItem('access-token', data.token);            
+        });
       }).catch((error) => {
         const errorMessage = error.message;
         toast.error(errorMessage?.split('/')[1]?.replace(').', '').split('-').join(' '));

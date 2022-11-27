@@ -31,18 +31,21 @@ const Register = () => {
       toast.error("Password is too short!");
     }
 
-    const newUser = { name, photoUrl, email, number, location, status}
+    const newUser = { displayName: name, photoUrl, email, number, location, status}
 
     register(email, password)
-    .then(() => {
+    .then(() => {     
+      // Logouting the user
       logOut()
-        .then(()=>{
-          toast.success('Successfully account created.');
-          setSubmitting(false);
-          navigate('/login');
-        });
+      .then(()=>{
+        toast.success('Successfully account created.');
+        setSubmitting(false);
+        navigate('/login');
+      });
+      // Updatting the user info for firebase
       updateUserProfile({displayName: name, photoURL: photoUrl})
       .then(()=>{
+        // Storing the user to MongoDB
         axios.post('http://localhost:5000/addUser', newUser)
         .then((response) => {
           setSubmitting(false);

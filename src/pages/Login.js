@@ -3,9 +3,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { StateContext } from '../StateProvider';
 import Form from '../components/Form';
 import toast from 'react-hot-toast';
+import axios from 'axios';
 
 const Login = () => {
-  const { login, setLoading } = useContext(StateContext);
+  const { login, setLoading, setUser } = useContext(StateContext);
   const [logging, setLogging] = useState(false);
   let navigate = useNavigate();
   let location = useLocation();
@@ -24,6 +25,7 @@ const Login = () => {
       setLogging(false);
       toast.success('Successfully Login.');
 
+      // Set the JWT
       fetch('http://localhost:5000/jwt', {
           method: 'POST',
           headers: {
@@ -38,6 +40,21 @@ const Login = () => {
           localStorage.setItem('access-token', data.token);
           navigate(from, { replace: true });
       });
+
+      // Getting the user info from the MongoDB
+      axios.get(`http://localhost:5000/user?email=${user?.email}`, {
+          headers: {
+              authorization: `Bearer ${localStorage.getItem('access-token')}`
+          }
+      })
+      .then(result => {
+          setUser(result?.data[0])
+      })
+      .catch((error) => {
+          console.log(error);
+          toast.error(error);
+      });
+
       e.target.reset();
     })
     .catch((error) => {
