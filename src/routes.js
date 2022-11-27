@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import RequireAuth from './RequireAuth';
 
 import App from "./App";
 import Login from "./pages/Login";
@@ -7,7 +8,7 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Category from "./pages/Category";
 import DashBoard from "./pages/DashBoard";
-import Categoried from "./components/Category";
+import Categoried, { getProductById } from "./components/Category";
 import ErrorFound from "./components/ErrorFound";
 import SellerProducts from "./components/dashboard/SellerProducts";
 import BuyerOrders from "./components/dashboard/BuyerOrders";
@@ -30,13 +31,12 @@ const routes = createBrowserRouter([
             path: 'category', 
             element: <Category/>,
             children: [ 
-               { path: 'all', element: <Categoried/> },
-               { path: ':id', element: <Categoried/> } 
+               { path: ':id', element: <Categoried/>, loader: getProductById } 
             ]
          },
          { 
             path: 'dashboard',
-            element: <DashBoard/>,
+            element: <RequireAuth><DashBoard/></RequireAuth>,
             children: [
                // admin routes
                { path: 'admin/allSellers',  element: <AdminAllSellers/> },

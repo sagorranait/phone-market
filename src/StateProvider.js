@@ -15,6 +15,7 @@ export const StateContext = createContext();
 
 const StateProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [currentUser, setCurrentUser] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const providerLogin = (provider) => {
@@ -60,6 +61,8 @@ const StateProvider = ({ children }) => {
         logOut, 
         providerLogin, 
         updateUserProfile,
+        currentUser,
+        setCurrentUser
     };
 
     return (

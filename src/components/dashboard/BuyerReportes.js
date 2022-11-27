@@ -1,5 +1,5 @@
-import SingleBuyerReporte from './SingleBuyerReporte'
-import TableHead from './TableHead'
+import SingleBuyerReporte from './SingleBuyerReporte';
+import TableHead from './TableHead';
 
 function BuyerReportes() {
   return (

@@ -1,12 +1,8 @@
-import { useContext } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { NavLink, Outlet } from 'react-router-dom';
-import { StateContext } from '../StateProvider';
 import '../styles/Category.css';
 
 const Category = () => {
-  const { user } = useContext(StateContext);
-  console.log(user);
 
   return (
     <section id='category'>
@@ -15,13 +11,6 @@ const Category = () => {
                <Col sm={12} md={12} lg={12} xl={12} xxl={12}>
                   <div className='sidebar-menu'>
                      <div className="nav-items">
-                     <NavLink 
-                        to='/category/all' 
-                        className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
-                        end
-                     >
-                        All Category
-                     </NavLink>
                      <NavLink 
                         to='/category/638176352841511b9346922f' 
                         className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }

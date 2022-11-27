@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { NavLink, Outlet } from 'react-router-dom';
 import { StateContext } from '../StateProvider';
@@ -10,10 +10,23 @@ import {
 } from "react-icons/bi";
 import { BsPeople, BsFillPeopleFill } from "react-icons/bs";
 import '../styles/DashBoard.css';
+import axios from 'axios';
 
 const DashBoard = () => {
-  const { user } = useContext(StateContext);
-   console.log(user);
+  const { user, setCurrentUser, currentUser } = useContext(StateContext);
+
+   useEffect(() => {
+     // Getting the user info from the MongoDB
+     axios.get(`http://localhost:5000/user?email=${user?.email}`)
+      .then(result => {
+         setCurrentUser(result?.data[0]);
+      })
+      .catch((error) => {
+            console.log(error);
+      });
+   }, [user?.email, setCurrentUser]);
+
+   console.log(user.email);
   return (
     <section id='dashboard'>
          <Container>
@@ -21,48 +34,60 @@ const DashBoard = () => {
                <Col sm={12} md={12} lg={12} xl={12} xxl={12}>
                   <div className='sidebar-menu'>
                      <div className="nav-items">
-                     <NavLink 
-                        to='/dashboard/seller/products' 
-                        className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
-                     >
-                        <BiShoppingBag /> My Products
-                     </NavLink>
-                     <NavLink 
-                        to='/dashboard/seller/addProduct' 
-                        className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
-                     >
-                        <BiCalendarPlus /> Add New Product
-                     </NavLink>
-                     <NavLink 
-                        to='/dashboard/buyer/orders' 
-                        className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
-                     >
-                        <BiCart /> My Orders
-                     </NavLink>
-                     <NavLink 
-                        to='/dashboard/buyer/reporte' 
-                        className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
-                     >
-                        <BiAngry /> My Reportes
-                     </NavLink>
-                     <NavLink 
-                        to='/dashboard/admin/allSellers' 
-                        className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
-                     >
-                        <BsPeople /> All Sellers
-                     </NavLink>
-                     <NavLink 
-                        to='/dashboard/admin/allBuyers' 
-                        className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
-                     >
-                        <BsFillPeopleFill /> All Buyers
-                     </NavLink>
-                     <NavLink 
-                        to='/dashboard/admin/allReportes' 
-                        className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
-                     >
-                        <BiAngry /> All Reportes
-                     </NavLink>
+                     {currentUser?.status === "seller" ? 
+                        <>
+                              <NavLink 
+                                 to='/dashboard/seller/products' 
+                                 className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
+                              >
+                                 <BiShoppingBag /> My Products
+                              </NavLink>
+                              <NavLink 
+                                 to='/dashboard/seller/addProduct' 
+                                 className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
+                              >
+                                 <BiCalendarPlus /> Add New Product
+                              </NavLink>
+                        </> 
+                     : null }
+                     {currentUser?.status === "buyer" ? 
+                        <>
+                              <NavLink 
+                                 to='/dashboard/buyer/orders' 
+                                 className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
+                              >
+                                 <BiCart /> My Orders
+                              </NavLink>
+                              <NavLink 
+                                 to='/dashboard/buyer/reporte' 
+                                 className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
+                              >
+                                 <BiAngry /> My Reportes
+                              </NavLink>
+                        </> 
+                     : null }
+                     {currentUser?.status === "admin" ? 
+                        <>
+                              <NavLink 
+                                 to='/dashboard/admin/allSellers' 
+                                 className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
+                              >
+                                 <BsPeople /> All Sellers
+                              </NavLink>
+                              <NavLink 
+                                 to='/dashboard/admin/allBuyers' 
+                                 className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
+                              >
+                                 <BsFillPeopleFill /> All Buyers
+                              </NavLink>
+                              <NavLink 
+                                 to='/dashboard/admin/allReportes' 
+                                 className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
+                              >
+                                 <BiAngry /> All Reportes
+                              </NavLink>
+                        </> 
+                     : null }
                      </div>
                   </div>
                </Col>
