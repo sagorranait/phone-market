@@ -11,6 +11,7 @@ import '../styles/Header.css';
 
 function Header() {
   const { user, logOut } = useContext(StateContext);
+  console.log(user);
   let location = useLocation();
   const navigate = useNavigate();
 

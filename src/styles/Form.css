@@ -76,6 +76,7 @@
    line-height: 17px;
    color: #5C5C5C;
    border-radius: 100px;
+   height: 60px;
 }
 
 #emailInput:focus, 
@@ -96,7 +97,8 @@
    border-radius: 100px;
 }
 
-#selectInput {
+#selectInput, 
+#selectInput2 {
    -webkit-appearance: none;
    -moz-appearance: none;
    background: transparent;
@@ -108,6 +110,14 @@
    width: 100%;
    padding: 15px 15px;
    border-radius: 100px;
+   height: 60px;
+}
+
+#numberInput::-webkit-outer-spin-button,
+#numberInput::-webkit-inner-spin-button{
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
 }
 
 /* Responsive Media Query */

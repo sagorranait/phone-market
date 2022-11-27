@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { StateContext } from '../StateProvider';
@@ -18,6 +19,9 @@ const Register = () => {
     const photoUrl = formData.photoUrl.value;
     const email = formData.email.value;
     const password = formData.password.value;
+    const number = formData.number.value;
+    const location = formData.location.value;
+    const status = formData.status.value;
 
     if (name.length < 3) {
       toast.error("Name is too short!");
@@ -26,6 +30,8 @@ const Register = () => {
     if (password.length < 5) {
       toast.error("Password is too short!");
     }
+
+    const newUser = { name, photoUrl, email, number, location, status}
 
     register(email, password)
     .then(() => {
@@ -37,7 +43,14 @@ const Register = () => {
         });
       updateUserProfile({displayName: name, photoURL: photoUrl})
       .then(()=>{
-        setSubmitting(false);
+        axios.post('http://localhost:5000/addUser', newUser)
+        .then((response) => {
+          setSubmitting(false);
+        })
+        .catch((error) => {
+          console.log(error);
+          toast.error(error);
+        });
       })
       .catch(error => {
         setSubmitting(false);
@@ -65,7 +78,7 @@ const Register = () => {
         <input type="password" name="password" id="passwordInput" placeholder='Password' required />
         <input type="number" name="number" id="numberInput" placeholder='Phone Number' required />
         <div className='select-input'>
-          <select name="divisions" id="selectInput">
+          <select name="location" id="selectInput">
             <option value="dhaka">Dhaka</option>
             <option value="chittagong">Chittagong</option>
             <option value="khulna">Khulna</option>
@@ -77,7 +90,7 @@ const Register = () => {
           </select>
         </div>
         <div className='select-input'>
-          <select name="status" id="selectInput">
+          <select name="status" id="selectInput2">
             <option value="buyer">Customer</option>
             <option value="seller">Become a Seller</option>
           </select>

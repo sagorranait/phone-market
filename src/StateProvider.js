@@ -9,6 +9,8 @@ import {
 } from 'firebase/auth';
 
 import { auth } from './firebase.config';
+import toast from 'react-hot-toast';
+import axios from 'axios';
 
 
 export const StateContext = createContext();
@@ -43,7 +45,19 @@ const StateProvider = ({ children }) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser);            
+            if (currentUser) {
+                axios.get(`http://localhost:5000/user?email=${currentUser?.email}`, {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('access-token')}`
+                    }
+                })
+                .then(result => setUser(result.data))
+                .catch((error) => {
+                    console.log(error);
+                    toast.error(error);
+                });
+            }
+            //setUser(currentUser);            
             setLoading(false);
         });
 

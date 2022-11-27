@@ -4,7 +4,7 @@ import '../styles/ProductItem.css';
 function ProductItem() {
   return (
     <div className='product-item'>
-      <span class="tag">available</span>
+      <span className="tag">available</span>
       <div className="img">
          <img src={'https://imgs.search.brave.com/Bd6z-QBHbK_pWsG9FEdRYBZXLa4Xh2ki_VnTSr0NtT4/rs:fit:493:506:1/g:ce/aHR0cHM6Ly9mcmVl/Ymllc2Nsb3VkLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Mi8wMi9TYW1zdW5n/LUdhbGF4eS1TMjIt/VWx0cmEtOC5wbmc'} alt="product-title" />
       </div>
