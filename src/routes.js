@@ -4,7 +4,6 @@ import App from "./App";
 import Login from "./pages/Login";
 import Blogs from "./pages/Blogs";
 import Home from "./pages/Home";
-import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Category from "./pages/Category";
 import DashBoard from "./pages/DashBoard";
@@ -39,7 +38,6 @@ const routes = createBrowserRouter([
             path: 'dashboard',
             element: <DashBoard/>,
             children: [
-               { path: 'profile',  element: <Profile/> },
                // admin routes
                { path: 'admin/allSellers',  element: <AdminAllSellers/> },
                { path: 'admin/allBuyers',  element: <AdminAllBuyers/> },

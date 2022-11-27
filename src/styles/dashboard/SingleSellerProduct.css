@@ -63,3 +63,19 @@
    font-size: 25px;
    line-height: 38px;
 }
+
+.item-template .product-advertise {
+   width: 165px;
+}
+
+.item-template .product-advertise button {
+   border-radius: 100px;
+   padding: 1px 10px;
+   font-size: 14px;
+   font-weight: 600;
+   margin-right: 10px;
+}
+
+.item-template .product-advertise button:last-child{
+   margin-right: 0;
+}

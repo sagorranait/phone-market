@@ -52,7 +52,7 @@ function Header() {
                Blog
             </NavLink>
             <NavLink 
-               to='/dashboard/profile' 
+               to='/dashboard/buyer/orders' 
                className={`nav-link ${({ isActive }) => isActive ? "active" : ""} 
                ${
                   (location.pathname === '/dashboard/seller/products') || 

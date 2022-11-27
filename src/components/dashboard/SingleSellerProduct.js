@@ -1,4 +1,3 @@
-import { CiTrash } from "react-icons/ci";
 import Verified from '../../assets/verified.png';
 import '../../styles/dashboard/SingleSellerProduct.css';
 import ItemTemplate from "./ItemTemplate";
@@ -24,8 +23,9 @@ function SingleSellerProduct() {
          <p>Area: <span>Dhaka</span></p>
          <p>Date: <span>2022-11-26</span></p>
       </div>
-      <div className='product-action'>
-         <button className="phoneMarket-btn"><CiTrash/></button>
+      <div className='product-action product-advertise'>
+         <button className="phoneMarket-btn">Advertise</button>
+         <button className="phoneMarket-btn">Delete</button>
       </div>
    </ItemTemplate>
   )

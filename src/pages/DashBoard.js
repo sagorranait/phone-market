@@ -3,7 +3,6 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { NavLink, Outlet } from 'react-router-dom';
 import { StateContext } from '../StateProvider';
 import { 
-   BiUser, 
    BiShoppingBag, 
    BiAngry, 
    BiCalendarPlus,
@@ -24,17 +23,10 @@ const DashBoard = () => {
                   <div className='sidebar-menu'>
                      <div className="nav-items">
                      <NavLink 
-                        to='/dashboard/profile' 
-                        className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
-                        end
-                     >
-                        <BiUser/> My Profile
-                     </NavLink>
-                     <NavLink 
                         to='/dashboard/seller/products' 
                         className={`nav-item ${({ isActive }) => isActive ? "active" : ""}` }
                      >
-                        <BiShoppingBag /> All Products
+                        <BiShoppingBag /> My Products
                      </NavLink>
                      <NavLink 
                         to='/dashboard/seller/addProduct' 
