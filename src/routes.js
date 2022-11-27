@@ -16,6 +16,7 @@ import BuyerReportes from "./components/dashboard/BuyerReportes";
 import AdminAllSellers from "./components/dashboard/AdminAllSellers";
 import AdminAllBuyers from "./components/dashboard/AdminAllBuyers";
 import AdminAllReportes from "./components/dashboard/AdminAllReportes";
+import AddNewProduct from "./components/dashboard/AddNewProduct";
 
 const routes = createBrowserRouter([
    { 
@@ -45,7 +46,7 @@ const routes = createBrowserRouter([
                { path: 'admin/allReportes',  element: <AdminAllReportes/> },
                // seller routes
                { path: 'seller/products',  element: <SellerProducts/> },
-               { path: 'seller/addProduct',  element: <>Add Product</> },
+               { path: 'seller/addProduct',  element: <AddNewProduct/> },
                // buyer routes
                { path: 'buyer/orders', element: <BuyerOrders/> },
                { path: 'buyer/reporte',  element: <BuyerReportes/>}

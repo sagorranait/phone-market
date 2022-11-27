@@ -65,7 +65,8 @@
 #nameInput, 
 #urlInput, 
 #numberInput, 
-#textareaInput {
+#textareaInput,
+#imageInput {
    background: #FFFFFF;
    border: 1px solid #EFEFEF;
    width: 100%;
