@@ -2,15 +2,20 @@ import { createBrowserRouter } from "react-router-dom";
 
 import App from "./App";
 import Login from "./pages/Login";
-import Register from "./pages/Register";
-import ErrorFound from "./components/ErrorFound";
-import DashBoard from "./pages/DashBoard";
-import Profile from "./pages/Profile";
 import Blogs from "./pages/Blogs";
 import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Register from "./pages/Register";
 import Category from "./pages/Category";
+import DashBoard from "./pages/DashBoard";
 import Categoried from "./components/Category";
+import ErrorFound from "./components/ErrorFound";
 import SellerProducts from "./components/dashboard/SellerProducts";
+import BuyerOrders from "./components/dashboard/BuyerOrders";
+import BuyerReportes from "./components/dashboard/BuyerReportes";
+import AdminAllSellers from "./components/dashboard/AdminAllSellers";
+import AdminAllBuyers from "./components/dashboard/AdminAllBuyers";
+import AdminAllReportes from "./components/dashboard/AdminAllReportes";
 
 const routes = createBrowserRouter([
    { 
@@ -35,15 +40,15 @@ const routes = createBrowserRouter([
             children: [
                { path: 'profile',  element: <Profile/> },
                // admin routes
-               { path: 'admin/allSellers',  element: <>Sellers</> },
-               { path: 'admin/allBuyers',  element: <>Buyers</> },
-               { path: 'admin/allReportes',  element: <>allReportes</> },
+               { path: 'admin/allSellers',  element: <AdminAllSellers/> },
+               { path: 'admin/allBuyers',  element: <AdminAllBuyers/> },
+               { path: 'admin/allReportes',  element: <AdminAllReportes/> },
                // seller routes
                { path: 'seller/products',  element: <SellerProducts/> },
                { path: 'seller/addProduct',  element: <>Add Product</> },
                // buyer routes
-               { path: 'buyer/orders', element: <>My Orders</> },
-               { path: 'buyer/reporte',  element: <>My Reports</>}
+               { path: 'buyer/orders', element: <BuyerOrders/> },
+               { path: 'buyer/reporte',  element: <BuyerReportes/>}
             ]
          }
       ],

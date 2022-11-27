@@ -1,70 +1,63 @@
-.seller-products .products .product {
-   background: #fff;
-   padding: 10px;
-   border-radius: 10px;
-   color: #000;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   margin-bottom: 15px;
-}
-
-.seller-products .products .product .image{
+.item-template .product-image{
    width: 100px;
    height: 100px;
 }
 
-.seller-products .products .product .image img{
+.item-template .product-number p{
+   margin: 0;
+}
+
+.item-template .product-image img{
    width: 100%;
    height: 100%;
    object-fit: contain;
    object-position: center;
 }
 
-.seller-products .products .product .product-info {
+.item-template .product-info {
    width: 222px;
 }
 
-.seller-products .products .product .product-info h2{
+.item-template .product-info h2{
    font-size: 15px;
    font-weight: 600;
 }
-.seller-products .products .product .product-info h4, 
-.seller-products .products .product .product-info p,
-.seller-products .products .product .status p,
-.seller-products .products .product .seller p{
+.item-template .product-info h4, 
+.item-template .product-info p,
+.item-template .product-status p,
+.item-template .product-seller p{
    font-size: 14px;
    font-weight: 400;
    margin-bottom: 3px;
 }
 
-.seller-products .products .product .product-info h4 del{
+.item-template .product-info h4 del{
    color: #afafaf;
 }
 
-.seller-products .products .product .product-info h4 span{
+.item-template .product-info h4 span{
    color: #607ba1;
    font-weight: 700;
 }
 
-.seller-products .products .product .status {
+.item-template .product-status {
    width: 173px;
    text-align: center;
 }
 
-.seller-products .products .product .seller {
+.item-template .product-seller {
    width: 173px;
 }
 
-.seller-products .products .product .seller p span img{
+.item-template .product-seller p span img{
    width: 17px;
 }
 
-.seller-products .products .product .action {
+.item-template .product-action {
    width: 60px;
 }
 
-.seller-products .products .product .action button {
+.item-template .product-action button {
    border-radius: 100px;
    padding: 6px 13px;
    font-size: 25px;
