@@ -1,8 +1,14 @@
+import { useState } from 'react';
 import Verified from '../assets/verified.png';
 import '../styles/ProductItem.css';
+import FormModal from './FormModal';
 
 function ProductItem({product}) {
+   const [modalShow, setModalShow] = useState(false);
+   const [modalStatus, setModalStatus] = useState('');
+
   return (
+   <>
     <div className='product-item'>
       <span className="tag">{product?.sales_status}</span>
       <div className="img">
@@ -22,10 +28,28 @@ function ProductItem({product}) {
          <p>Date: <span>{product?.post_date.slice(0, 10)}</span></p>
       </div>
       <div className="actions">
-         <button className='phoneMarket-btn'>Book Now</button>
-         <button className='phoneMarket-btn'>Report to Admin</button>
+         <button 
+            className='phoneMarket-btn' 
+            onClick={() =>{ 
+               setModalShow(true);
+               setModalStatus('booking');
+            }}
+         >Book Now</button>
+         <button 
+            className='phoneMarket-btn'
+            onClick={() =>{ 
+               setModalShow(true);
+               setModalStatus('reporting');
+            }}
+         >Report to Admin</button>
       </div>
     </div>
+    <FormModal 
+         show={modalShow}
+         onHide={() => setModalShow(false)}
+         status={modalStatus}
+      />
+   </>
   )
 }
 

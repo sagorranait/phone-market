@@ -26,7 +26,6 @@ const DashBoard = () => {
       });
    }, [user?.email, setCurrentUser]);
 
-   console.log(user.email);
   return (
     <section id='dashboard'>
          <Container>

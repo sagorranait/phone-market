@@ -1,0 +1,12 @@
+.modal-header {
+   border-bottom: 0px !important;
+}
+
+.modal-body{
+   padding-top: 0 !important;
+}
+
+#contained-modal-title-vcenter {
+   font-size: 18px;
+   font-weight: 600;
+}

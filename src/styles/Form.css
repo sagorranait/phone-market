@@ -120,6 +120,14 @@
    appearance: none;
 }
 
+input:-moz-read-only { /* For Firefox */
+   background-color: #e3e3e3 !important;
+}
+
+input:read-only {
+   background-color: #e3e3e3 !important;
+}
+
 /* Responsive Media Query */
 @media only screen and (max-width: 575.98px) {
    #signInArea .signin-inputs {

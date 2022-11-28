@@ -5,8 +5,6 @@ import ProductItem from "./ProductItem"
 function Category() {
 const products = useLoaderData();
 
-console.log(products);
-
   return (
     <div className='category'>
          <Row>
