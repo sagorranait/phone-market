@@ -1,22 +1,62 @@
 import React from 'react'
+import toast from 'react-hot-toast';
 import { CiTrash } from 'react-icons/ci'
 import ItemTemplate from './ItemTemplate'
 
-function SingleBuyerReporte() {
+function SingleBuyerReporte({reporte, number}) {
+   const {_id, message, product_info} = reporte;
+   
+
+   const removeReporteHandler = (id) => {
+      const sureDelete = window.confirm("Are you sure to delete!");
+      if (sureDelete) {
+         fetch(`http://localhost:5000/reported/${id}`, {
+            method: 'DELETE',
+         })
+         .then(res => res.json())
+         .then(data => {
+            if (data.deletedCount > 0) {
+
+               const reported = {
+                  user: '',
+                  status: false
+               }
+               // updating the product reporte
+               fetch(`http://localhost:5000/product/report/${product_info?._id}`, {
+                  method: 'PATCH',
+                  headers: {
+                     'content-type': 'application/json',
+                  },
+                  body: JSON.stringify(reported)
+               })
+               .then(res => res.json())
+               .then(data => {
+                  console.log(data);
+                  if (data.modifiedCount > 0) {
+                     toast.success('Deleted Successfully.');
+                  }
+               })
+               .catch(error => console.log(error));
+            }
+         })
+         .catch((error)=> console.log(error));
+      }
+   }
+
   return (
    <ItemTemplate>
    <div className='product-number'>
-      <p>1</p>
+      <p>{number+1}</p>
    </div>
    <div className='product-info'>
-      <h2>SAMSUNG Galaxy S22 Ultra</h2>
-      <h4>Price: <del>1199.99</del> <span>349.38</span></h4>
+      <h2>{product_info.title}</h2>
+      <h4>Price: <span>{product_info.resale_price}</span></h4>
    </div>
    <div className='product-info'>
-      <p>128GB, 8K Camera & Video, Brightest Display Screen...</p>
+      <p>{message}</p>
    </div>
    <div className='product-action'>
-      <button className="phoneMarket-btn"><CiTrash/></button>
+      <button className="phoneMarket-btn" onClick={()=>removeReporteHandler(_id)}><CiTrash/></button>
    </div>
 </ItemTemplate>
   )

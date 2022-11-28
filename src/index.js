@@ -6,13 +6,19 @@ import StateProvider from './StateProvider';
 import { routes } from './routes';
 import './styles/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { QueryClient, QueryClientProvider} from '@tanstack/react-query';
+
+// Create a client
+const queryClient = new QueryClient()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <StateProvider>
-      <RouterProvider router={routes} />
-    </StateProvider>
+    <QueryClientProvider client={queryClient}>
+      <StateProvider>
+        <RouterProvider router={routes} />
+      </StateProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

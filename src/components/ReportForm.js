@@ -19,6 +19,7 @@ function ReportForm({product, onHide}) {
 
       const ReportedInfo = {
          product_info: {
+            _id: product?._id,
             img_url : product?.img_url,
             title: product?.title,
             original_price: product?.original_price,

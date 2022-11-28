@@ -46,7 +46,7 @@
 
 #dashboard .main-area {
    width: 950px;
-   height: 650px;
+   height: max-content;
    margin: 0 auto;
    background: #607ba1;
    padding: 20px;
