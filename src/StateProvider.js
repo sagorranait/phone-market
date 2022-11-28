@@ -9,6 +9,7 @@ import {
 } from 'firebase/auth';
 
 import { auth } from './firebase.config';
+import axios from 'axios';
 
 
 export const StateContext = createContext();
@@ -49,7 +50,19 @@ const StateProvider = ({ children }) => {
         });
 
         return () => unsubscribe();
-    }, [])
+    }, []);
+
+    useEffect(() => {
+      // Getting the user info from the MongoDB
+     axios.get(`http://localhost:5000/user?email=${user?.email}`)
+     .then(result => {
+        setCurrentUser(result?.data[0]);
+     })
+     .catch((error) => {
+           console.log(error);
+     });
+    }, [user?.email]);
+    
 
     const authInfo = { 
         user,

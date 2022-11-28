@@ -90,3 +90,8 @@
    font-size: 15px;
    border-radius: 0px;
 }
+
+.product-item .actions button.booked {
+   background: #313d4d;
+   cursor: auto;
+}

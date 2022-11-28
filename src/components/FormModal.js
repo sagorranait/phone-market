@@ -3,7 +3,7 @@ import '../styles/FormModal.css';
 import BookingForm from './BookingForm';
 import ReportForm from './ReportForm';
 
-function FormModal({show, onHide, status}) {
+function FormModal({show, onHide, status, product}) {
   return (
    <Modal
       show={show}
@@ -18,7 +18,7 @@ function FormModal({show, onHide, status}) {
       </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-      {status === 'booking' ? <BookingForm/> : <ReportForm/>}
+      {status === 'booking' ? <BookingForm product={product} onHide={onHide}/> : <ReportForm/>}
       </Modal.Body>
    </Modal>
   )

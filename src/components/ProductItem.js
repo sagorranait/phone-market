@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Verified from '../assets/verified.png';
+import { StateContext } from '../StateProvider';
 import '../styles/ProductItem.css';
 import FormModal from './FormModal';
 
 function ProductItem({product}) {
+   const { currentUser } = useContext(StateContext);
    const [modalShow, setModalShow] = useState(false);
    const [modalStatus, setModalStatus] = useState('');
 
@@ -28,6 +30,8 @@ function ProductItem({product}) {
          <p>Date: <span>{product?.post_date.slice(0, 10)}</span></p>
       </div>
       <div className="actions">
+         {product?.booked?.user === currentUser?.email ? <button 
+            className='phoneMarket-btn booked'>Booked</button> : 
          <button 
             className='phoneMarket-btn' 
             onClick={() =>{ 
@@ -35,6 +39,7 @@ function ProductItem({product}) {
                setModalStatus('booking');
             }}
          >Book Now</button>
+         }
          <button 
             className='phoneMarket-btn'
             onClick={() =>{ 
@@ -48,6 +53,7 @@ function ProductItem({product}) {
          show={modalShow}
          onHide={() => setModalShow(false)}
          status={modalStatus}
+         product={product}
       />
    </>
   )

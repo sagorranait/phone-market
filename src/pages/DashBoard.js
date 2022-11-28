@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { NavLink, Outlet } from 'react-router-dom';
 import { StateContext } from '../StateProvider';
@@ -10,21 +10,9 @@ import {
 } from "react-icons/bi";
 import { BsPeople, BsFillPeopleFill } from "react-icons/bs";
 import '../styles/DashBoard.css';
-import axios from 'axios';
 
 const DashBoard = () => {
-  const { user, setCurrentUser, currentUser } = useContext(StateContext);
-
-   useEffect(() => {
-     // Getting the user info from the MongoDB
-     axios.get(`http://localhost:5000/user?email=${user?.email}`)
-      .then(result => {
-         setCurrentUser(result?.data[0]);
-      })
-      .catch((error) => {
-            console.log(error);
-      });
-   }, [user?.email, setCurrentUser]);
+  const { currentUser } = useContext(StateContext);
 
   return (
     <section id='dashboard'>
