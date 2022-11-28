@@ -31,7 +31,7 @@ const Register = () => {
       toast.error("Password is too short!");
     }
 
-    const newUser = { displayName: name, photoUrl, email, number, location, status}
+    const newUser = { displayName: name, photoUrl, email, number, location, status, verified: false}
 
     register(email, password)
     .then(() => {     

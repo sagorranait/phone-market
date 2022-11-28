@@ -22,7 +22,8 @@ const Form = ({title, description, toastMessage, children}) => {
           email: newUser.email,
           number: '01812354689',
           location: 'Dhaka',
-          status: 'buyer'
+          status: 'buyer',
+          verified: false
         };
 
         fetch(`http://localhost:5000/addUser/${newUser.email}`, {

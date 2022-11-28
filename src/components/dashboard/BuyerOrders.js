@@ -17,8 +17,6 @@ function BuyerOrders() {
     }).then(res => res.json()) 
   });
 
-  console.log(orders);
-
   return (
     <div className='buyer-orders'>
       {orders?.length === 0 ? <p className='text-center pt-5'>No Order is available!</p> :
