@@ -6,10 +6,9 @@ import { StateContext } from '../StateProvider';
 import { FaGoogle } from "react-icons/fa";
 import toast from 'react-hot-toast';
 import '../styles/Form.css'
-import axios from 'axios';
 
 const Form = ({title, description, toastMessage, children}) => {
-  const {setUser, providerLogin} = useContext(StateContext);
+  const {providerLogin} = useContext(StateContext);
   let navigate = useNavigate();
 
    const singupWithGoogleHandler = () => {
@@ -26,15 +25,17 @@ const Form = ({title, description, toastMessage, children}) => {
           status: 'buyer'
         };
 
-        axios.post('http://localhost:5000/addUser', providerUser)
-        .then((response) => {
-          setUser(providerUser);
-          toast.success(toastMessage);
-          navigate('/');
+        fetch(`http://localhost:5000/addUser/${newUser.email}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(providerUser)
         })
-        .catch((error) => {
-          console.log(error);
-          toast.error(error);
+        .then(res => res.json())
+        .then(data => {
+            toast.success(toastMessage);
+            navigate('/');
         });
 
          // Set the JWT
