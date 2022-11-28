@@ -80,7 +80,8 @@
 }
 
 .item-template .product-advertise {
-   width: 165px;
+   width: 135px;
+   text-align: center;
 }
 
 .item-template .product-advertise button {
@@ -89,6 +90,11 @@
    font-size: 14px;
    font-weight: 600;
    margin-right: 10px;
+   margin-bottom: 5px;
+}
+
+.item-template .product-advertise button.advertised {
+   background: #838383;
 }
 
 .item-template .product-advertise button:last-child{
