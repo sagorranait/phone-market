@@ -1,9 +1,12 @@
 import React from 'react'
 import toast from 'react-hot-toast';
 import { CiTrash } from 'react-icons/ci'
+import { useLocation, useNavigate } from 'react-router-dom';
 import ItemTemplate from './ItemTemplate'
 
 function SingleBuyerReporte({reporte, number}) {
+   let location = useLocation();
+   let navigate = useNavigate();
    const {_id, message, product_info} = reporte;
    
 
@@ -16,7 +19,9 @@ function SingleBuyerReporte({reporte, number}) {
          .then(res => res.json())
          .then(data => {
             if (data.deletedCount > 0) {
-
+               toast.success('Deleted Successfully.');
+               navigate(location);
+               
                const reported = {
                   user: '',
                   status: false
@@ -31,9 +36,9 @@ function SingleBuyerReporte({reporte, number}) {
                })
                .then(res => res.json())
                .then(data => {
-                  console.log(data);
                   if (data.modifiedCount > 0) {
-                     toast.success('Deleted Successfully.');
+                     console.log(data);
+                     
                   }
                })
                .catch(error => console.log(error));

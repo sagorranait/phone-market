@@ -1,6 +1,7 @@
 #dashboard{
    background: rgb(49 61 77);
    padding: 50px 0;
+   height: 650px;
 }
 
 #dashboard .sidebar-menu {
@@ -52,6 +53,16 @@
    padding: 20px;
    border-radius: 15px;
    color: #FFFFFF;
+}
+
+#dashboard .order-action {
+   width: 95px;
+   text-align: center;
+}
+
+#dashboard .order-action button {
+   padding: 5px 12px;
+   margin-bottom: 5px;
 }
 
 /* Responsive Media Query */
