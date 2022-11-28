@@ -40,13 +40,16 @@ function ProductItem({product}) {
             }}
          >Book Now</button>
          }
-         <button 
-            className='phoneMarket-btn'
-            onClick={() =>{ 
-               setModalShow(true);
-               setModalStatus('reporting');
-            }}
-         >Report to Admin</button>
+         {product?.reported?.user === currentUser?.email ? <button 
+            className='phoneMarket-btn booked'>Reported</button> : 
+            <button 
+               className='phoneMarket-btn'
+               onClick={() =>{ 
+                  setModalShow(true);
+                  setModalStatus('reporting');
+               }}
+            >Report to Admin</button>
+         }
       </div>
     </div>
     <FormModal 

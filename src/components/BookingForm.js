@@ -97,7 +97,7 @@ function BookingForm({product, onHide}) {
          <Form.Group>
             <textarea id="textareaInput" name="meeting" placeholder='Meeting location' rows="3" style={{borderRadius: '5px'}}></textarea>
          </Form.Group>
-         <button className='phoneMarket-btn w-100 mt-1' type="submit">{booking ? 'Booking' : 'Booked'}</button>
+         <button className='phoneMarket-btn w-100 mt-1' type="submit">{booking ? 'Booking...' : 'Booked'}</button>
       </Form>
     </div>
   )

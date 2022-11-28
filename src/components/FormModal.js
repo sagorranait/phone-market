@@ -18,7 +18,7 @@ function FormModal({show, onHide, status, product}) {
       </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-      {status === 'booking' ? <BookingForm product={product} onHide={onHide}/> : <ReportForm/>}
+      {status === 'booking' ? <BookingForm product={product} onHide={onHide}/> : <ReportForm product={product} onHide={onHide}/>}
       </Modal.Body>
    </Modal>
   )
