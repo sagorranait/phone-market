@@ -8,7 +8,7 @@ import TableHead from './TableHead';
 function BuyerOrders() {
   const { user } = useContext(StateContext);
   
-  const {data: orders, isLoading} = useQuery({ 
+  const {data: orders, isLoading, refetch} = useQuery({ 
     queryKey: ['buyerOuders'], 
     queryFn: () => fetch(`http://localhost:5000/booked?email=${user?.email}`, {
       headers: {
@@ -22,7 +22,7 @@ function BuyerOrders() {
       {orders?.length === 0 ? <p className='text-center pt-5'>No Order is available!</p> :
       <>
         <TableHead table={['No.', 'Image', 'Product Details', 'Contact info', 'Action']}/>
-        {isLoading ? <Loading/> : orders.map((order, index) => <SingleBuyerOrder key={order._id} order={order} number={index}/>)}
+        {isLoading ? <Loading/> : orders.map((order, index) => <SingleBuyerOrder key={order._id} order={order} number={index} refetch={refetch}/>)}
       </>
       }
     </div>

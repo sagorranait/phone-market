@@ -2,7 +2,7 @@ import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ItemTemplate from './ItemTemplate';
 
-function SingleBuyerOrder({order, number}) {
+function SingleBuyerOrder({order, number, refetch}) {
    let location = useLocation();
    let navigate = useNavigate();
    const {_id, lastly, meeting_location, phone_number, product_info, paid } = order;
@@ -33,6 +33,7 @@ function SingleBuyerOrder({order, number}) {
                .then(data => {
                   console.log(data);
                   if (data.modifiedCount > 0) {
+                     refetch();
                      toast.success('Deleted Successfully.');
                      navigate(location);
                   }

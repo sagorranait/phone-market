@@ -4,7 +4,7 @@ import { CiTrash } from 'react-icons/ci'
 import { useLocation, useNavigate } from 'react-router-dom';
 import ItemTemplate from './ItemTemplate'
 
-function SingleBuyerReporte({reporte, number}) {
+function SingleBuyerReporte({reporte, number, refetch}) {
    let location = useLocation();
    let navigate = useNavigate();
    const {_id, message, product_info} = reporte;
@@ -19,6 +19,7 @@ function SingleBuyerReporte({reporte, number}) {
          .then(res => res.json())
          .then(data => {
             if (data.deletedCount > 0) {
+               refetch();
                toast.success('Deleted Successfully.');
                navigate(location);
                
