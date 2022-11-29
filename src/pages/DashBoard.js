@@ -10,8 +10,10 @@ import {
 } from "react-icons/bi";
 import { BsPeople, BsFillPeopleFill } from "react-icons/bs";
 import '../styles/DashBoard.css';
+import usePageTitle from '../hooks/usePageTitle';
 
 const DashBoard = () => {
+   usePageTitle('DashBoard');
   const { currentUser } = useContext(StateContext);
 
   return (

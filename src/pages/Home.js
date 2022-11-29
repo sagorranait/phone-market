@@ -5,8 +5,10 @@ import AppDownload from "../components/AppDownload"
 import Banner from "../components/Banner"
 import Categories from "../components/Categories"
 import Services from "../components/Services"
+import usePageTitle from "../hooks/usePageTitle"
 
 const Home = () => {
+  usePageTitle('');
   const [loading, setLoading] = useState(false);
   const [advertiseProduct, setAdvertiseProduct] = useState([]);
 

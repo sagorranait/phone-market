@@ -1,9 +1,10 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import { NavLink, Outlet } from 'react-router-dom';
+import usePageTitle from '../hooks/usePageTitle';
 import '../styles/Category.css';
 
 const Category = () => {
-
+   usePageTitle('Categories');
   return (
     <section id='category'>
          <Container>

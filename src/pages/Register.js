@@ -4,8 +4,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { StateContext } from '../StateProvider';
 import toast from 'react-hot-toast';
 import Form from '../components/Form';
+import usePageTitle from '../hooks/usePageTitle';
 
 const Register = () => {
+  usePageTitle('Register');
   const {register, updateUserProfile, logOut} = useContext(StateContext);
   let navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);

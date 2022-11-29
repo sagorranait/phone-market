@@ -3,8 +3,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { StateContext } from '../StateProvider';
 import Form from '../components/Form';
 import toast from 'react-hot-toast';
+import usePageTitle from '../hooks/usePageTitle';
 
 const Login = () => {
+  usePageTitle('Login');
   const { login, setLoading } = useContext(StateContext);
   const [logging, setLogging] = useState(false);
   let navigate = useNavigate();

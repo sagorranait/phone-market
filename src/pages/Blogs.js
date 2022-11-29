@@ -1,9 +1,11 @@
 import { Accordion, Container } from 'react-bootstrap';
 import AccordionItme from '../components/AccordionItme';
 import Services from '../components/Services';
+import usePageTitle from '../hooks/usePageTitle';
 import '../styles/Blogs.css';
 
 const Blogs = () => {
+  usePageTitle('Blog');
   return (
     <>
       <section id='questions'>
