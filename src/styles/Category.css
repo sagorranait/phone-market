@@ -60,6 +60,19 @@
       font-size: 24px;
       margin-bottom: 23px;
    }
+
+   #category .sidebar-menu {
+      width: auto;
+  }
+
+  #category .sidebar-menu .nav-items {
+      flex-wrap: wrap;
+   }
+
+   #category .sidebar-menu .nav-items .nav-item {
+      margin-right: 0px;
+      margin-bottom: 15px;
+  }
 }
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
    #category .outlet-page {
@@ -71,6 +84,19 @@
       font-size: 24px;
       margin-bottom: 23px;
    }
+
+   #category .sidebar-menu {
+      width: auto;
+  }
+
+  #category .sidebar-menu .nav-items {
+      flex-wrap: wrap;
+   }
+
+   #category .sidebar-menu .nav-items .nav-item {
+      margin-right: 0px;
+      margin-bottom: 15px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 992.98px) {
    #category .outlet-page {
