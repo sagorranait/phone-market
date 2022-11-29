@@ -80,4 +80,29 @@
       background: #FFF;
       padding: 50px 0;
   }
+
+  .service-area .service h4 {
+      font-size: 16px;
+   }
+
+   .service-area .service p {
+      width: auto;
+      font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1399.98px) {
+   .service-area {
+      background: #FFF;
+      padding: 50px 0;
+  }
+
+  .service-area .service h4 {
+      font-size: 16px;
+   }
+
+   .service-area .service p {
+      width: auto;
+      font-size: 13px;
+  }
 }

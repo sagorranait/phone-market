@@ -96,6 +96,7 @@ const CheckoutForm = ({ booking }) => {
                     console.log(data);
                     if (data.insertedId) {
                         setSuccess('Congrats! your payment completed');
+                        toast.success('Congrats! your payment completed');
                         setTransactionId(paymentIntent.id);
                     }
                 })

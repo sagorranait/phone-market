@@ -24,14 +24,14 @@ function Services() {
                   <p>Friendly 24/7 customer support</p>
                </div>
             </Col>
-            <Col sm={12} md={12} lg={3} xl={3} xxl={3}>
+            <Col sm={12} md={6} lg={3} xl={3} xxl={3}>
                <div className="service">
                   <img src={Shield} alt="Shield" />
                   <h4>Money Back Guarantee</h4>
                   <p>We return money within 30 days</p>
                </div>
             </Col>
-            <Col sm={12} md={12} lg={3} xl={3} xxl={3}>
+            <Col sm={12} md={6} lg={3} xl={3} xxl={3}>
                <div className="service">
                   <img src={CreditCard} alt="CreditCard" />
                   <h4>Secure Online Payment</h4>

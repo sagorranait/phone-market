@@ -11,7 +11,7 @@ function Advertised({loading, products}) {
          <h2>Advertisement</h2>
          {loading ? <Loading/> : 
          <Row className={`${products.length === 1 || products.length === 2 ? 'justify-content-center' : ''}`}>
-            {products?.map(product => <Col key={product._id} sm={12} md={6} lg={4} xl={4} xxl={4}>
+            {products?.map(product => <Col key={product._id} sm={12} md={6} lg={6} xl={4} xxl={4}>
                <ProductItem product={product}/>
             </Col>)}
             

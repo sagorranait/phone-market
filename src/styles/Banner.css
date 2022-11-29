@@ -53,8 +53,8 @@
       place-items: center;
   }
   .banner-area .content h1 {
-   font-size: 20px;
-   line-height: 29px;
+   font-size: 30px;
+   line-height: 40px;
    text-align: center;
 }
 .banner-area .content p {
@@ -71,8 +71,8 @@
       place-items: center;
   }
   .banner-area .content h1 {
-   font-size: 20px;
-   line-height: 29px;
+   font-size: 30px;
+   line-height: 40px;
    text-align: center;
 }
 .banner-area .content p {
@@ -86,8 +86,8 @@
 }
 @media screen and (min-width: 768px) and (max-width: 992.98px) {
    .banner-area .content h1 {
-      font-size: 25px;
-      line-height: 35px;
+      font-size: 45px;
+      line-height: 50px;
       margin: 0;
   }
   .banner-area .content a {
@@ -96,11 +96,21 @@
 }
 @media screen and (min-width: 993px) and (max-width: 1200.98px) {
    .banner-area .content h1 {
-      font-size: 30px;
-      line-height: 36px;
+      font-size: 45px;
+      line-height: 50px;
+      margin: 0;
   }
   .banner-area {
       padding: 40px 0;
    }
 }
-@media screen and (min-width: 1201px) and (max-width: 1399.98px) {}
+@media screen and (min-width: 1201px) and (max-width: 1399.98px) {
+   .banner-area .content h1 {
+      font-size: 45px;
+      line-height: 50px;
+      margin: 0;
+  }
+  .banner-area {
+      padding: 40px 0;
+   }
+}
