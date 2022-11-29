@@ -1,6 +1,7 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const CheckoutForm = ({ booking }) => {
     console.log(booking);
@@ -79,7 +80,8 @@ const CheckoutForm = ({ booking }) => {
                 price,
                 transactionId: paymentIntent.id,
                 email,
-                bookingId: _id
+                bookingId: _id,
+                productId: product_info._id
             }
             fetch('http://localhost:5000/payments', {
                 method: 'POST',
@@ -111,9 +113,9 @@ const CheckoutForm = ({ booking }) => {
                         style: {
                             base: {
                                 fontSize: '16px',
-                                color: '#424770',
+                                color: '#FFF',
                                 '::placeholder': {
-                                    color: '#aab7c4',
+                                    color: '#FFF',
                                 },
                             },
                             invalid: {
@@ -123,16 +125,17 @@ const CheckoutForm = ({ booking }) => {
                     }}
                 />
                 <button
-                    className='btn btn-sm mt-4 btn-primary'
+                    className='phoneMarket-btn mt-3'
                     type="submit"
                     disabled={!stripe || !clientSecret || processing}>
-                    Pay
+                    {processing ? 'Paying...' : 'Pay'}
                 </button>
             </form>
             {
-                success && <div>
-                    <p className='text-green-500'>{success}</p>
-                    <p>Your transactionId: <span className='font-bold'>{transactionId}</span></p>
+                success && <div className='success-message'>
+                    <p>{success}</p>
+                    <p>Your transactionId: <span>{transactionId}</span></p>
+                    <Link to='/dashboard/buyer/orders'>Go Back to Orders Page</Link>
                 </div>
             }
         </>

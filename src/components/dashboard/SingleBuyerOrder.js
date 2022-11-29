@@ -5,7 +5,7 @@ import ItemTemplate from './ItemTemplate';
 function SingleBuyerOrder({order, number}) {
    let location = useLocation();
    let navigate = useNavigate();
-   const {_id, lastly, meeting_location, phone_number, product_info} = order;
+   const {_id, lastly, meeting_location, phone_number, product_info, paid } = order;
    
    const removeOrderHandler = (id) => {
       const sureDelete = window.confirm("Are you sure to delete!");
@@ -62,7 +62,7 @@ function SingleBuyerOrder({order, number}) {
          <p>Location: <span>{meeting_location}</span></p>
       </div>
       <div className='order-action payment-btn'>
-         <Link to={`/dashboard/buyer/payment/${_id}`} className="phoneMarket-btn">Pay Now</Link>
+         {paid ? <button className="phoneMarket-btn paid-btn">Paid</button> : <Link to={`/dashboard/buyer/payment/${_id}`} className="phoneMarket-btn">Pay Now</Link>}
          <button className="phoneMarket-btn" onClick={()=>removeOrderHandler(_id)}>Delete</button>
       </div>
    </ItemTemplate>

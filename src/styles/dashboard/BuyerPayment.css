@@ -8,3 +8,24 @@
    line-height: 130%;
    color: #ffffff;
 }
+
+.success-message {
+   padding-top: 20px;
+}
+
+.success-message p {
+   margin-bottom: 5px;
+   color: #ffd661;
+}
+
+.success-message p span{
+   font-weight: bold;
+}
+
+.success-message a{
+   color: #ffffff;
+}
+
+.success-message a:hover{
+   color: #ffffff;
+}
