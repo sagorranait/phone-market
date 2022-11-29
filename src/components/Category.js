@@ -17,7 +17,7 @@ const products = useLoaderData();
 }
 
 export async function getProductById({params}) {
-   const response = await fetch('http://localhost:5000/category/product/' + params.id);
+   const response = await fetch('https://phonemarket-server-app.vercel.app/category/product/' + params.id);
    if (!response.ok) {
      throw new Error('Failed to fetch post.');
    }

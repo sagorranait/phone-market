@@ -54,7 +54,7 @@ const StateProvider = ({ children }) => {
 
     useEffect(() => {
       // Getting the user info from the MongoDB
-     axios.get(`http://localhost:5000/user?email=${user?.email}`)
+     axios.get(`https://phonemarket-server-app.vercel.app/user?email=${user?.email}`)
      .then(result => {
         setCurrentUser(result?.data[0]);
      })

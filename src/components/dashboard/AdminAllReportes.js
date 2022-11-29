@@ -10,7 +10,7 @@ function AdminAllReportes() {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:5000/allReporte')
+    fetch('https://phonemarket-server-app.vercel.app/allReporte')
     .then(res => res.json())
     .then(data => {
       setAllReportes(data)
@@ -22,7 +22,7 @@ function AdminAllReportes() {
   const deleteReportedHandler = (id, proId) => {
     const sureDelete = window.confirm("Are you sure to delete!");
     if (sureDelete) {
-      fetch(`http://localhost:5000/reported/${id}`, {
+      fetch(`https://phonemarket-server-app.vercel.app/reported/${id}`, {
           method: 'DELETE',
       })
       .then(res => res.json())
@@ -31,7 +31,7 @@ function AdminAllReportes() {
             toast.success('Deleted Successfully.');
             const remaining = allReportes.filter(odr => odr._id !== id);
             setAllReportes(remaining);
-            fetch(`http://localhost:5000/product/${proId}`, {
+            fetch(`https://phonemarket-server-app.vercel.app/product/${proId}`, {
                 method: 'DELETE',
             })
             .then(res => res.json())

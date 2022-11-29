@@ -25,7 +25,7 @@ const Login = () => {
       toast.success('Successfully Login.');
 
       // Set the JWT
-      fetch('http://localhost:5000/jwt', {
+      fetch('https://phonemarket-server-app.vercel.app/jwt', {
           method: 'POST',
           headers: {
               'content-type': 'application/json'

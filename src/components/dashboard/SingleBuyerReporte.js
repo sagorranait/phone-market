@@ -13,7 +13,7 @@ function SingleBuyerReporte({reporte, number, refetch}) {
    const removeReporteHandler = (id) => {
       const sureDelete = window.confirm("Are you sure to delete!");
       if (sureDelete) {
-         fetch(`http://localhost:5000/reported/${id}`, {
+         fetch(`https://phonemarket-server-app.vercel.app/reported/${id}`, {
             method: 'DELETE',
          })
          .then(res => res.json())
@@ -28,7 +28,7 @@ function SingleBuyerReporte({reporte, number, refetch}) {
                   status: false
                }
                // updating the product reporte
-               fetch(`http://localhost:5000/product/report/${product_info?._id}`, {
+               fetch(`https://phonemarket-server-app.vercel.app/product/report/${product_info?._id}`, {
                   method: 'PATCH',
                   headers: {
                      'content-type': 'application/json',

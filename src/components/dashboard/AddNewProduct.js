@@ -13,7 +13,7 @@ function AddNewProduct() {
    const [loading, setLoading] = useState(false);
 
    useEffect(() => {
-      fetch('http://localhost:5000/categories')
+      fetch('https://phonemarket-server-app.vercel.app/categories')
       .then(res => res.json())
       .then(data => {
          setCategory(data)
@@ -66,7 +66,7 @@ function AddNewProduct() {
             reported: { user: '', status: false }
          }
 
-         axios.post('http://localhost:5000/product', newProduct)
+         axios.post('https://phonemarket-server-app.vercel.app/product', newProduct)
          .then((response) => {
             setLoading(false);
             toast.success('Product Added Successfully.');

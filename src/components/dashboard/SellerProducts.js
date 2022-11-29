@@ -12,7 +12,7 @@ function SellerProducts() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/sellerproduct?email=${user?.email}`, {
+    fetch(`https://phonemarket-server-app.vercel.app/sellerproduct?email=${user?.email}`, {
       headers: {
           authorization: `Bearer ${localStorage.getItem('access-token')}`
       }
@@ -30,7 +30,7 @@ function SellerProducts() {
       advertised: true,
     }
 
-    fetch(`http://localhost:5000/sellerproduct/${id}`, {
+    fetch(`https://phonemarket-server-app.vercel.app/sellerproduct/${id}`, {
         method: 'PATCH',
         headers: {
             'content-type': 'application/json',
@@ -41,7 +41,7 @@ function SellerProducts() {
       .then(data => {
         console.log(data);
         if (data.modifiedCount > 0) {
-          fetch(`http://localhost:5000/sellerproduct?email=${user?.email}`, {
+          fetch(`https://phonemarket-server-app.vercel.app/sellerproduct?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('access-token')}`
             }
@@ -60,7 +60,7 @@ function SellerProducts() {
  const deleteProductHandler = (id) => {
   const sureDelete = window.confirm("Are you sure to delete!");
   if (sureDelete) {
-    fetch(`http://localhost:5000/product/${id}`, {
+    fetch(`https://phonemarket-server-app.vercel.app/product/${id}`, {
         method: 'DELETE',
     })
     .then(res => res.json())

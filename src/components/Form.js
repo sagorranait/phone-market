@@ -26,7 +26,7 @@ const Form = ({title, description, toastMessage, children}) => {
           verified: false
         };
 
-        fetch(`http://localhost:5000/addUser/${newUser.email}`, {
+        fetch(`https://phonemarket-server-app.vercel.app/addUser/${newUser.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -40,7 +40,7 @@ const Form = ({title, description, toastMessage, children}) => {
         });
 
          // Set the JWT
-        fetch('http://localhost:5000/jwt', {
+        fetch('https://phonemarket-server-app.vercel.app/jwt', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

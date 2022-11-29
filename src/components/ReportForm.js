@@ -37,9 +37,9 @@ function ReportForm({product, onHide}) {
          status: true
       }
 
-      axios.post('http://localhost:5000/reported', ReportedInfo)
+      axios.post('https://phonemarket-server-app.vercel.app/reported', ReportedInfo)
       .then((response) => {
-         fetch(`http://localhost:5000/product/report/${product?._id}`, {
+         fetch(`https://phonemarket-server-app.vercel.app/product/report/${product?._id}`, {
             method: 'PATCH',
             headers: {
                'content-type': 'application/json',

@@ -26,7 +26,7 @@ function BuyerPayment() {
 }
 
 export async function getBookedProductById({params}) {
-   const response = await fetch('http://localhost:5000/booked/' + params.id);
+   const response = await fetch('https://phonemarket-server-app.vercel.app/booked/' + params.id);
    if (!response.ok) {
      throw new Error('Failed to fetch post.');
    }

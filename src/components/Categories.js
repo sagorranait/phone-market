@@ -11,7 +11,7 @@ function Categories() {
 
    useEffect(() => {
       setLoading(true);
-     axios.get('http://localhost:5000/categories')
+     axios.get('https://phonemarket-server-app.vercel.app/categories')
    .then(res => {
       setCategories(res.data);
       setLoading(false);

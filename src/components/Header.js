@@ -17,8 +17,8 @@ function Header() {
   const userLogOut = () => {
       logOut()
       .then(()=>{
-         setUser([]);
-         navigate('/');
+         setUser(null);
+         navigate('/login');
       })
       .catch(error => {
          const errorMessage = error.message;

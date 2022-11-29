@@ -10,7 +10,7 @@ function BuyerOrders() {
   
   const {data: orders, isLoading, refetch} = useQuery({ 
     queryKey: ['buyerOuders'], 
-    queryFn: () => fetch(`http://localhost:5000/booked?email=${user?.email}`, {
+    queryFn: () => fetch(`https://phonemarket-server-app.vercel.app/booked?email=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem('access-token')}`
       }

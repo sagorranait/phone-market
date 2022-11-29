@@ -12,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get('http://localhost:5000/product/advertised')
+    axios.get('https://phonemarket-server-app.vercel.app/product/advertised')
     .then(res =>{ 
       setAdvertiseProduct(res.data);
       setLoading(false);

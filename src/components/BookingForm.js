@@ -41,9 +41,9 @@ function BookingForm({product, onHide}) {
          status: true
       }
 
-      axios.post('http://localhost:5000/booked', BookedInfo)
+      axios.post('https://phonemarket-server-app.vercel.app/booked', BookedInfo)
       .then((response) => {
-         fetch(`http://localhost:5000/product/${product?._id}`, {
+         fetch(`https://phonemarket-server-app.vercel.app/product/${product?._id}`, {
             method: 'PATCH',
             headers: {
                'content-type': 'application/json',

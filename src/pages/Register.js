@@ -46,7 +46,7 @@ const Register = () => {
       updateUserProfile({displayName: name, photoURL: photoUrl})
       .then(()=>{
         // Storing the user to MongoDB
-        axios.post('http://localhost:5000/addUser', newUser)
+        axios.post('https://phonemarket-server-app.vercel.app/addUser', newUser)
         .then((response) => {
           setSubmitting(false);
         })

@@ -10,7 +10,7 @@ function SingleBuyerOrder({order, number, refetch}) {
    const removeOrderHandler = (id) => {
       const sureDelete = window.confirm("Are you sure to delete!");
       if (sureDelete) {
-         fetch(`http://localhost:5000/booked/${id}`, {
+         fetch(`https://phonemarket-server-app.vercel.app/booked/${id}`, {
             method: 'DELETE',
          })
          .then(res => res.json())
@@ -22,7 +22,7 @@ function SingleBuyerOrder({order, number, refetch}) {
                   status: false
                }
                // updating the product reporte
-               fetch(`http://localhost:5000/product/${product_info?._id}`, {
+               fetch(`https://phonemarket-server-app.vercel.app/product/${product_info?._id}`, {
                   method: 'PATCH',
                   headers: {
                      'content-type': 'application/json',

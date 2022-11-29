@@ -10,7 +10,7 @@ function AdminAllBuyers() {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:5000/user/allBuyer')
+    fetch('https://phonemarket-server-app.vercel.app/user/allBuyer')
     .then(res => res.json())
     .then(data => {
       setAllBuyers(data)
@@ -25,7 +25,7 @@ function AdminAllBuyers() {
        verified: true,
     }
 
-    fetch(`http://localhost:5000/user/${id}`, {
+    fetch(`https://phonemarket-server-app.vercel.app/user/${id}`, {
        method: 'PATCH',
        headers: {
           'content-type': 'application/json',
@@ -36,7 +36,7 @@ function AdminAllBuyers() {
     .then(data => {
        console.log(data);
        if (data.modifiedCount > 0) {
-        fetch('http://localhost:5000/user/allBuyer')
+        fetch('https://phonemarket-server-app.vercel.app/user/allBuyer')
         .then(res => res.json())
         .then(data => {
           setAllBuyers(data)
@@ -53,7 +53,7 @@ function AdminAllBuyers() {
  const deleteBuyerHandler = (id) => {
   const sureDelete = window.confirm("Are you sure to delete!");
   if (sureDelete) {
-    fetch(`http://localhost:5000/user/${id}`, {
+    fetch(`https://phonemarket-server-app.vercel.app/user/${id}`, {
         method: 'DELETE',
     })
     .then(res => res.json())
