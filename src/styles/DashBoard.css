@@ -65,6 +65,20 @@
    margin-bottom: 5px;
 }
 
+#dashboard .payment-btn {
+   width: 119px;
+}
+
+#dashboard .payment-btn a {
+   margin-bottom: 5px;
+   text-decoration: none;
+   display: block;
+}
+
+#dashboard .payment-btn a:hover{
+   color: #FFFFFF;
+}
+
 /* Responsive Media Query */
 @media only screen and (max-width: 575.98px) {
    #dashboard .outlet-page {

@@ -17,6 +17,7 @@ import AdminAllSellers from "./components/dashboard/AdminAllSellers";
 import AdminAllBuyers from "./components/dashboard/AdminAllBuyers";
 import AdminAllReportes from "./components/dashboard/AdminAllReportes";
 import AddNewProduct from "./components/dashboard/AddNewProduct";
+import BuyerPayment, { getBookedProductById } from "./components/dashboard/BuyerPayment";
 
 const routes = createBrowserRouter([
    { 
@@ -47,7 +48,8 @@ const routes = createBrowserRouter([
                { path: 'seller/addProduct',  element: <AddNewProduct/> },
                // buyer routes
                { path: 'buyer/orders', element: <BuyerOrders/> },
-               { path: 'buyer/reporte',  element: <BuyerReportes/>}
+               { path: 'buyer/reporte',  element: <BuyerReportes/>},
+               { path: 'buyer/payment/:id',  element: <BuyerPayment/>, loader: getBookedProductById}
             ]
          }
       ],

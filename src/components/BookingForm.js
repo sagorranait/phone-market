@@ -26,7 +26,6 @@ function BookingForm({product, onHide}) {
             original_price: product?.original_price,
             resale_price: product?.resale_price,
             condition: product?.condition,
-            pay_status: false,
          },
          user_info: {
             name: currentUser?.displayName,

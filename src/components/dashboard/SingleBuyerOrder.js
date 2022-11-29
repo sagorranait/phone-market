@@ -1,5 +1,5 @@
 import toast from 'react-hot-toast';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ItemTemplate from './ItemTemplate';
 
 function SingleBuyerOrder({order, number}) {
@@ -61,8 +61,8 @@ function SingleBuyerOrder({order, number}) {
          <p>Number: <span>{phone_number}</span></p>
          <p>Location: <span>{meeting_location}</span></p>
       </div>
-      <div className='order-action'>
-         <button className="phoneMarket-btn">Pay Now</button>
+      <div className='order-action payment-btn'>
+         <Link to={`/dashboard/buyer/payment/${_id}`} className="phoneMarket-btn">Pay Now</Link>
          <button className="phoneMarket-btn" onClick={()=>removeOrderHandler(_id)}>Delete</button>
       </div>
    </ItemTemplate>
