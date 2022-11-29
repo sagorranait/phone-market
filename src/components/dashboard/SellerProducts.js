@@ -77,13 +77,15 @@ function SellerProducts() {
 
   return (
     <div className='seller-products'>
-      <div className='products'>
-         {sellerProduct?.length === 0 ? <p className='text-center pt-5'>No product is available!</p> :
-          <>
-            {loading ? <Loading/> : sellerProduct.map(product => <SingleSellerProduct key={product._id} product={product} advertisedHandler={advertisedHandler} deleteProductHandler={deleteProductHandler} />)}
-          </>
-          }
-      </div>
+      {loading ? <Loading/> :
+        <div className='products'>
+          {sellerProduct?.length === 0 ? <p className='text-center pt-5'>No product is available!</p> :
+            <>
+              {sellerProduct.map(product => <SingleSellerProduct key={product._id} product={product} advertisedHandler={advertisedHandler} deleteProductHandler={deleteProductHandler} />)}
+            </>
+            }
+        </div>
+      }
     </div>
   )
 }

@@ -10,8 +10,6 @@ function ProductItem({product}) {
    const [modalShow, setModalShow] = useState(false);
    const [modalStatus, setModalStatus] = useState('');
 
-   console.log(user);
-
   return (
    <>
     <div className='product-item'>

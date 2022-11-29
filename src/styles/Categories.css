@@ -40,6 +40,10 @@
       padding: 15px 0 0;
   }
 
+  .categories-area .category .image img {
+      width: 73%;
+   }
+
   .categories-area h2 {
       font-size: 25px;
       margin-bottom: 10px;
@@ -51,6 +55,7 @@
   }
   .categories-area .category {
       margin-top: 15px;
+      margin-bottom: 0;
    }
 }
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
@@ -62,12 +67,17 @@
       margin-bottom: 10px;
    }
 
+   .categories-area .category .image img {
+      width: 73%;
+   }
+
    .categories-area .category .image {
       height: auto;
       margin-bottom: 0;
   }
   .categories-area .category {
       margin-top: 15px;
+      margin-bottom: 0;
    }
 }
 @media screen and (min-width: 768px) and (max-width: 992.98px) {

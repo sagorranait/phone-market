@@ -8,3 +8,19 @@
    justify-content: space-between;
    margin-bottom: 15px;
 }
+
+/* Responsive Media Query */
+@media only screen and (max-width: 575.98px) {
+   .item-template {
+      flex-direction: column;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+   .item-template {
+      flex-direction: column;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992.98px) {}
+@media screen and (min-width: 993px) and (max-width: 1200.98px) {}
+@media screen and (min-width: 1201px) and (max-width: 1399.98px) {}
+/* Responsive Media Query */

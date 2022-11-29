@@ -133,4 +133,18 @@ input:read-only {
    #signInArea .signin-inputs {
       width: 100%;
   }
+
+  #signInArea .signin-inputs h2 {
+      font-size: 20px;
+   }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+   #signInArea .signin-inputs {
+      width: 100%;
+  }
+
+  #signInArea .signin-inputs h2 {
+      font-size: 20px;
+   }
 }
