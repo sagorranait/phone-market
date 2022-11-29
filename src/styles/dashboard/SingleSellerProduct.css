@@ -196,7 +196,33 @@
       margin-right: 0px;
    }
 }
-@media screen and (min-width: 768px) and (max-width: 992.98px) {}
-@media screen and (min-width: 993px) and (max-width: 1200.98px) {}
-@media screen and (min-width: 1201px) and (max-width: 1399.98px) {}
+@media screen and (min-width: 768px) and (max-width: 992.98px) {
+   .item-template .adminUser-img {
+      width: 438px;
+  }
+
+  .adminUser-action {
+      text-align: right;
+   }
+
+   .vrified-btn {
+      margin-bottom: 5px;
+  }
+
+  .product-number {
+      width: 18px !important;
+   }
+
+   .admin-all-reportes .product-info {
+      width: 152px !important;
+  }
+
+  .admin-all-reportes .product-info h2, .buyer-orders .product-info h2 {
+   font-size: 14px;
+  }
+
+  .buyer-orders .product-info {
+      width: 165px;
+   }
+}
 /* Responsive Media Query */

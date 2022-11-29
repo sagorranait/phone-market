@@ -6,3 +6,22 @@
 .addNew-product button{
    margin-top: 15px;
 }
+
+/* Responsive Media Query */
+@media only screen and (max-width: 575.98px) {
+   .addNew-product{
+      width: auto;
+   }
+   .addNew-product .row {
+      flex-direction: column;
+   }
+}
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+   .addNew-product{
+      width: auto;
+   }
+   .addNew-product .row {
+      flex-direction: column;
+   }
+}
+/* Responsive Media Query */

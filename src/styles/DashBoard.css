@@ -116,6 +116,13 @@
       text-align: center;
       margin-top: 15px;
    }
+
+  .buyer-orders, .buyer-reportes {
+   overflow-x: auto;
+  }
+  #dashboard .sidebar-menu .nav-items .nav-item {
+      margin-right: 0px;
+   }
 }
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
    #dashboard {
@@ -149,6 +156,13 @@
       text-align: center;
       margin-top: 15px;
    }
+
+   .buyer-orders, .buyer-reportes {
+      overflow-x: auto;
+     }
+  #dashboard .sidebar-menu .nav-items .nav-item {
+      margin-right: 0px;
+   }
 }
 @media screen and (min-width: 768px) and (max-width: 992.98px) {
    #dashboard .outlet-page {
@@ -159,5 +173,9 @@
       font-size: 28px;
       margin-bottom: 25px;
    }
+
+   #dashboard .main-area {
+      width: auto;
+  }
 }
 /* Responsive Media Query */
