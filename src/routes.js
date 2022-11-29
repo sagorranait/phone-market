@@ -30,7 +30,7 @@ const routes = createBrowserRouter([
          { path: 'register', element: <Register/> },
          { 
             path: 'category', 
-            element: <Category/>,
+            element: <RequireAuth><Category/></RequireAuth>,
             children: [ 
                { path: ':id', element: <Categoried/>, loader: getProductById } 
             ]

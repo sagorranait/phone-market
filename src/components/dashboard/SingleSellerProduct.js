@@ -3,7 +3,7 @@ import '../../styles/dashboard/SingleSellerProduct.css';
 import ItemTemplate from "./ItemTemplate";
 
 function SingleSellerProduct({product, advertisedHandler, deleteProductHandler}) {
-   const {_id, used_year, title, saler_verified, saler_name, original_price, resale_price, post_date, phone_number, location, img_url, description, condition, advertised} = product;
+   const {_id, used_year, title, saler_verified, saler_name, original_price, resale_price, post_date, phone_number, location, img_url, description, condition, sales_status, advertised} = product;
 
   return (
    <ItemTemplate>
@@ -18,6 +18,7 @@ function SingleSellerProduct({product, advertisedHandler, deleteProductHandler})
       <div className='product-status'>
          <p>Condition: <span>{condition}</span></p>
          <p>Used: <span>{used_year} year</span></p>
+         <p>Sales Status: <span>{sales_status}</span></p>
       </div>
       <div className='product-seller'>
          <p>{saler_name} {saler_verified && <span><img src={Verified} alt="Verified" /></span>}</p>
@@ -28,7 +29,7 @@ function SingleSellerProduct({product, advertisedHandler, deleteProductHandler})
       <div className='product-action product-advertise'>
          {advertised ? 
             <button className="phoneMarket-btn advertised">Advertised</button> : 
-            <button className="phoneMarket-btn" onClick={()=>advertisedHandler(_id)}>Give Advertise</button>
+            <button className="phoneMarket-btn" onClick={()=>advertisedHandler(_id)}>Mark Advertised</button>
          }
          <button className="phoneMarket-btn" onClick={()=>deleteProductHandler(_id)}>Delete</button>
       </div>

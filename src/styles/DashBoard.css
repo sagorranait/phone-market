@@ -79,6 +79,10 @@
    color: #FFFFFF;
 }
 
+.buyer-btn{
+   text-align: right;
+}
+
 /* Responsive Media Query */
 @media only screen and (max-width: 575.98px) {
    #dashboard .outlet-page {

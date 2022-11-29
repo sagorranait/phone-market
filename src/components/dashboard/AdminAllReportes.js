@@ -49,11 +49,15 @@ function AdminAllReportes() {
 
   return (
     <div className='admin-all-reportes'>
-      {allReportes?.length === 0 ? <p className='text-center pt-5'>No Seller is available!</p> :
-      <>
-      <TableHead table={['No.', 'Reported Product', 'Reported User', 'Report Message', 'Action']}/>
-        {loading ? <Loading/> : allReportes.map((report, index) => <SingleAdminReporte key={report._id} report={report} number={index} deleteReportedHandler={deleteReportedHandler} />)}
-      </>
+      {loading ? <Loading/> :
+        <>
+          {allReportes?.length === 0 ? <p className='text-center pt-5'>No Seller is available!</p> :
+          <>
+          <TableHead table={['No.', 'Reported Product', 'Reported User', 'Report Message', 'Action']}/>
+            { allReportes.map((report, index) => <SingleAdminReporte key={report._id} report={report} number={index} deleteReportedHandler={deleteReportedHandler} />) }
+          </>
+          }
+        </>
       }
     </div>
   )

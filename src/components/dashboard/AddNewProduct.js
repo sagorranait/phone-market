@@ -2,10 +2,12 @@ import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import { StateContext } from '../../StateProvider';
 import '../../styles/dashboard/AddNewProduct.css';
 
 function AddNewProduct() {
+   let navigate = useNavigate();
    const { currentUser } = useContext(StateContext);
    const [category, setCategory] = useState([]);
    const [loading, setLoading] = useState(false);
@@ -68,6 +70,7 @@ function AddNewProduct() {
          .then((response) => {
             setLoading(false);
             toast.success('Product Added Successfully.');
+            navigate('/dashboard/seller/products');
             e.target.reset();
          })
          .catch((error) => {

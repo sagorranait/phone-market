@@ -70,11 +70,15 @@ function AdminAllBuyers() {
 
   return (
     <div className='admin-all-buyers'>
-      {allBuyers?.length === 0 ? <p className='text-center pt-5'>No Buyer is available!</p> :
-      <>
-        <TableHead table={['No.', 'Buyer Image', 'Buyer Details', 'Action']}/>
-        {loading ? <Loading/> : allBuyers.map((seller, index) => <SingleAdminSeller key={seller._id} seller={seller} numbers={index} verifiedHandler={verifiedHandler} deleteSellerHandler={deleteBuyerHandler} />)}
-      </>
+      {loading ? <Loading/> : 
+        <>
+          {allBuyers?.length === 0 ? <p className='text-center pt-5'>No Buyer is available!</p> :
+          <>
+            <TableHead table={['No.', 'Buyer Image', 'Buyer Details', 'Action']}/>
+            {allBuyers.map((seller, index) => <SingleAdminSeller key={seller._id} seller={seller} numbers={index} verifiedHandler={verifiedHandler} deleteSellerHandler={deleteBuyerHandler} buyer={true} />)}
+          </>
+          }
+        </>
       }
     </div>
   )

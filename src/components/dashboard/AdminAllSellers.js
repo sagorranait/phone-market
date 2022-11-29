@@ -67,11 +67,15 @@ function AdminAllSellers() {
 
   return (
     <div className='admin-all-sellers'>
-      {allSellers?.length === 0 ? <p className='text-center pt-5'>No Seller is available!</p> :
-      <>
-        <TableHead table={['No.', 'Seller Image', 'Seller Details', 'Action']}/>
-        {loading ? <Loading/> : allSellers.map((seller, index) => <SingleAdminSeller key={seller._id} seller={seller} numbers={index} verifiedHandler={verifiedHandler} deleteSellerHandler={deleteSellerHandler} />)}
-      </>
+      { loading ? <Loading/> :
+        <>
+          {allSellers?.length === 0 ? <p className='text-center pt-5'>No Seller is available!</p> :
+            <>
+              <TableHead table={['No.', 'Seller Image', 'Seller Details', 'Action']}/>
+              {allSellers.map((seller, index) => <SingleAdminSeller key={seller._id} seller={seller} numbers={index} verifiedHandler={verifiedHandler} deleteSellerHandler={deleteSellerHandler} buyer={false} />)}
+            </>
+          }
+        </>
       }
     </div>
   )

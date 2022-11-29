@@ -12,7 +12,7 @@ function Banner() {
                <div className="content">
                   <h1>buy smart <br /> sell smart</h1>
                   <p>Giving new life to used smartphones & other devices.</p>
-                  <Link to="/category" className='phoneMarket-btn'>Book Now</Link>
+                  <Link to="/" className='phoneMarket-btn'>Book Now</Link>
                </div>
             </Col>
             <Col sm={12} md={6} lg={6} xl={6} xxl={6}>
