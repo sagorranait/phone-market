@@ -1,13 +1,16 @@
 import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Verified from '../assets/verified.png';
 import { StateContext } from '../StateProvider';
 import '../styles/ProductItem.css';
 import FormModal from './FormModal';
 
 function ProductItem({product}) {
-   const { currentUser } = useContext(StateContext);
+   const { currentUser, user } = useContext(StateContext);
    const [modalShow, setModalShow] = useState(false);
    const [modalStatus, setModalStatus] = useState('');
+
+   console.log(user);
 
   return (
    <>
@@ -29,7 +32,7 @@ function ProductItem({product}) {
          <p>Area: <span>{product?.location}</span></p>
          <p>Date: <span>{product?.post_date.slice(0, 10)}</span></p>
       </div>
-      <div className="actions">
+      {user ? <div className="actions">
          {product?.booked?.user === currentUser?.email ? <button 
             className='phoneMarket-btn booked'>Booked</button> : 
          <button 
@@ -50,7 +53,7 @@ function ProductItem({product}) {
                }}
             >Report to Admin</button>
          }
-      </div>
+      </div> : <Link to='/login' className='phoneMarket-btn loginToPurchase-btn'>Login to Purchase</Link>}      
     </div>
     <FormModal 
          show={modalShow}

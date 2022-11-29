@@ -95,3 +95,13 @@
    background: #313d4d;
    cursor: auto;
 }
+
+.loginToPurchase-btn {
+   display: inherit;
+   text-align: center;
+   text-decoration: none;
+}
+
+.loginToPurchase-btn:hover{
+   color: #fff;
+}

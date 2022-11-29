@@ -34,6 +34,10 @@
    font-weight: 600;
 }
 
+.banner-area .content a:hover{
+   color: #ffffff;
+}
+
 .banner-area .image{
    width: 100%;
    text-align: center;
