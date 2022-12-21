@@ -27,3 +27,8 @@ p{
   border: none;
   border-radius: 100px;
 }
+
+.payment-btn:disabled,
+.payment-btn[disabled]{
+  background-color: #838383;
+}

@@ -4,11 +4,11 @@ import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 const CheckoutForm = ({ booking }) => {
-    console.log(booking);
     const [success, setSuccess] = useState('');
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState("");
+    const [payDone, setPayDone] = useState(true);
 
     const stripe = useStripe();
     const elements = useElements();
@@ -102,8 +102,7 @@ const CheckoutForm = ({ booking }) => {
                 })
         }
         setProcessing(false);
-
-
+        setPayDone(false);
     }
 
     return (
@@ -126,9 +125,9 @@ const CheckoutForm = ({ booking }) => {
                     }}
                 />
                 <button
-                    className='phoneMarket-btn mt-3'
+                    className='phoneMarket-btn mt-3 payment-btn'
                     type="submit"
-                    disabled={!stripe || !clientSecret || processing}>
+                    disabled={!stripe || !clientSecret || processing || payDone === false}>
                     {processing ? 'Paying...' : 'Pay'}
                 </button>
             </form>
