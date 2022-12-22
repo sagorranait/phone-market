@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -13,6 +13,7 @@ function Header() {
   const { user, setUser, logOut, currentUser } = useContext(StateContext);
   let location = useLocation();
   const navigate = useNavigate();
+  const [expanded, setExpanded] = useState(false);
 
   const userLogOut = () => {
       logOut()
@@ -24,10 +25,12 @@ function Header() {
          const errorMessage = error.message;
          toast.error(errorMessage?.split('/')[1]?.replace(').', '').split('-').join(' '));
       });
+
+      setExpanded(false);
   }
 
   return (
-   <Navbar expand="lg" bg="dark">
+   <Navbar expanded={expanded} expand="lg" bg="dark">
       <Container>
          <Link to='/' className='d-flex align-items-center text-decoration-none'>
             <img
@@ -36,12 +39,13 @@ function Header() {
               alt="phone-market"
             />
          </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav"><FaBars/></Navbar.Toggle>
+        <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")} aria-controls="basic-navbar-nav"><FaBars/></Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <NavLink 
                to='/' 
                className={`nav-link ${({ isActive }) => isActive ? "active" : ""}` }
+               onClick={() => setExpanded(false)}
                end
             >
                Home
@@ -49,6 +53,7 @@ function Header() {
             <NavLink 
                to='/blogs' 
                className={`nav-link ${({ isActive }) => isActive ? "active" : ""}` }
+               onClick={() => setExpanded(false)}
             >
                Blog
             </NavLink>
@@ -65,6 +70,7 @@ function Header() {
                      (location.pathname === '/dashboard/admin/allBuyers') || 
                      (location.pathname === '/dashboard/admin/allReportes')
                      ? 'active': ''}` }
+                  onClick={() => setExpanded(false)}
                >
                   Dashboard
                </NavLink>
@@ -74,7 +80,7 @@ function Header() {
             {
                user?.email || user?.displayName ? 
                <Link className='nav-link phoneMarket-btn' to='/' onClick={userLogOut}>Sign Out</Link>
-               : <Link className='nav-link phoneMarket-btn' to='/login'>Login</Link>
+               : <Link onClick={() => setExpanded(false)} className='nav-link phoneMarket-btn' to='/login'>Login</Link>
             }
         </div>
         </Navbar.Collapse>
